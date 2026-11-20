@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  body {
+    background-color: #FBF7F0;
+    color: #2B2118;
+    overflow-x: hidden;
+  }
+
+  /* 44px tap targets minimum on mobile buttons/links where required */
+  button, a {
+    touch-action: manipulation;
+  }
+}
+
+@layer utilities {
+  .touch-tap-target {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Safe area padding for mobile bottom bar */
+  .pb-safe-bottom {
+    padding-bottom: calc(4.5rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  /* Stitched line motif */
+  .stitch-border-b {
+    border-bottom: 2px dashed rgba(192, 86, 33, 0.4);
+  }
+  
+  .stitch-border-t {
+    border-top: 2px dashed rgba(192, 86, 33, 0.4);
+  }
+
+  .stitch-border-box {
+    border: 1.5px dashed rgba(192, 86, 33, 0.35);
+  }
+
+  /* Hide scrollbar for clean horizontal product rows */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}

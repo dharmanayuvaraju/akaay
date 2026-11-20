@@ -1,0 +1,145 @@
+import { Order, StaffMember, StoreSettings } from '../types';
+
+export const INITIAL_SETTINGS: StoreSettings = {
+  announcementText: 'For bulk & boutique orders, message us on WhatsApp',
+  heroOfferText: 'up to 50% off',
+  productDiscountOverrides: {},
+};
+
+export const INITIAL_STAFF: StaffMember[] = [
+  {
+    id: 'stf-1',
+    name: 'Kavita Reddy',
+    phone: '9876543210',
+    role: 'manager',
+    createdAt: '2026-01-10T10:00:00Z',
+  },
+  {
+    id: 'stf-2',
+    name: 'Sameer Khan',
+    phone: '9123456780',
+    role: 'sales',
+    createdAt: '2026-02-01T11:30:00Z',
+  },
+];
+
+export const INITIAL_ORDERS: Order[] = [
+  {
+    id: 'AKY-2415',
+    items: [
+      {
+        productId: 'mhr-01',
+        name: 'Gulnar Banarasi Silk Saree',
+        image: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=400&h=500&q=80',
+        price: 1449,
+        mrp: 2499,
+        size: 'Free Size',
+        color: 'Vermillion Red',
+        quantity: 1,
+      },
+    ],
+    subtotal: 1449,
+    discount: 1050,
+    shipping: 99,
+    total: 1548,
+    address: {
+      fullName: 'Priya Iyer',
+      phone: '9845012345',
+      pincode: '500034',
+      city: 'Hyderabad',
+      state: 'Telangana',
+      streetAddress: 'Flat 402, Banjara Hills Road No. 12',
+    },
+    paymentMethod: 'UPI',
+    status: 'Shipped',
+    statusHistory: [
+      { status: 'Placed', timestamp: '2026-11-18T10:15:00Z', note: 'Order placed via UPI' },
+      { status: 'Packed', timestamp: '2026-11-18T15:30:00Z', note: 'Handcrafted quality inspection complete' },
+      { status: 'Shipped', timestamp: '2026-11-19T09:00:00Z', note: 'Handed over to BlueDart Express' },
+    ],
+    customerPhone: '9845012345',
+    createdAt: '2026-11-18T10:15:00Z',
+    estimatedDelivery: '2026-11-22',
+  },
+  {
+    id: 'AKY-2416',
+    items: [
+      {
+        productId: 'mhr-05',
+        name: 'Zeenat Chikankari Kurta Set',
+        image: 'https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=400&h=500&q=80',
+        price: 1199,
+        mrp: 2299,
+        size: 'M',
+        color: 'Ivory White',
+        quantity: 1,
+      },
+      {
+        productId: 'mhr-13',
+        name: 'Zoya Linen Co-ord',
+        image: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=400&h=500&q=80',
+        price: 1299,
+        mrp: 2199,
+        size: 'M',
+        color: 'Sand Khaki',
+        quantity: 1,
+      },
+    ],
+    subtotal: 2498,
+    discount: 2000,
+    shipping: 0,
+    total: 2498,
+    address: {
+      fullName: 'Sunita Mehra',
+      phone: '9811122334',
+      pincode: '110017',
+      city: 'New Delhi',
+      state: 'Delhi',
+      streetAddress: 'B-44, Panchsheel Enclave',
+    },
+    paymentMethod: 'Card',
+    status: 'Packed',
+    statusHistory: [
+      { status: 'Placed', timestamp: '2026-11-19T14:20:00Z', note: 'Order placed via Visa Card' },
+      { status: 'Packed', timestamp: '2026-11-19T18:00:00Z', note: 'Steam pressed & boutique boxed' },
+    ],
+    customerPhone: '9811122334',
+    createdAt: '2026-11-19T14:20:00Z',
+    estimatedDelivery: '2026-11-23',
+  },
+  {
+    id: 'AKY-2417',
+    items: [
+      {
+        productId: 'mhr-17',
+        name: 'Apsara Embroidered Lehenga',
+        image: 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=400&h=500&q=80',
+        price: 2999,
+        mrp: 5499,
+        size: 'L',
+        color: 'Heritage Maroon',
+        quantity: 1,
+      },
+    ],
+    subtotal: 2999,
+    discount: 2500,
+    shipping: 0,
+    total: 2999,
+    address: {
+      fullName: 'Aarohi Sen',
+      phone: '7337422054',
+      pincode: '400050',
+      city: 'Mumbai',
+      state: 'Maharashtra',
+      streetAddress: 'Sea View Apts, Bandra West',
+    },
+    paymentMethod: 'COD',
+    status: 'Placed',
+    statusHistory: [
+      { status: 'Placed', timestamp: '2026-11-20T08:45:00Z', note: 'Cash on Delivery order placed' },
+    ],
+    customerPhone: '7337422054',
+    createdAt: '2026-11-20T08:45:00Z',
+    estimatedDelivery: '2026-11-25',
+  },
+];
