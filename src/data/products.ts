@@ -28,13 +28,13 @@ export const CATEGORIES: { name: Category; slug: string; image: string; tag: str
   {
     name: 'Lehengas',
     slug: 'lehengas',
-    image: 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=600&h=750&q=80',
+    image: 'https://images.unsplash.com/photo-1693336429270-094637e16d38?auto=format&fit=crop&w=600&h=750&q=80',
     tag: 'Celebration Ready',
   },
   {
     name: 'Tops',
     slug: 'tops',
-    image: 'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=600&h=750&q=80',
+    image: 'https://images.unsplash.com/photo-1515734674582-29010bb37906?auto=format&fit=crop&w=600&h=750&q=80',
     tag: 'Boutique Separates',
   },
 ];
@@ -104,7 +104,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     category: 'Sarees',
     price: 899,
     mrp: 1599,
-    images: makeGallery('https://images.unsplash.com/photo-1609357605129-26f69add5d6e?auto=format'),
+    images: makeGallery('https://images.unsplash.com/photo-1787295779699-e2c006307746?auto=format'),
     colors: [
       { name: 'Terracotta Earth', hex: '#C05621' },
       { name: 'Indigo Dusk', hex: '#2A4365' },
@@ -128,7 +128,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     category: 'Sarees',
     price: 1249,
     mrp: 2199,
-    images: makeGallery('https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format'),
+    images: makeGallery('https://images.unsplash.com/photo-1753981031189-27bb7bd1c079?auto=format'),
     colors: [
       { name: 'Wine Plum', hex: '#4A1525' },
       { name: 'Champagne Taupe', hex: '#C5B5A1' },
@@ -178,7 +178,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     category: 'Kurta Sets',
     price: 1499,
     mrp: 2799,
-    images: makeGallery('https://images.unsplash.com/photo-1596783074918-c84cb06531ca?auto=format'),
+    images: makeGallery('https://images.unsplash.com/photo-1631269535913-e0b03423290c?auto=format'),
     colors: [
       { name: 'Marigold Yellow', hex: '#E9B44C' },
       { name: 'Crimson Clay', hex: '#9E382B' },
@@ -202,7 +202,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     category: 'Kurta Sets',
     price: 999,
     mrp: 1799,
-    images: makeGallery('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format'),
+    images: makeGallery('https://images.unsplash.com/photo-1769063382706-8156b3b33eac?auto=format'),
     colors: [
       { name: 'Warm Terracotta', hex: '#C05621' },
       { name: 'Charcoal Cocoa', hex: '#3B2F2F' },
@@ -226,7 +226,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     category: 'Kurta Sets',
     price: 1699,
     mrp: 2999,
-    images: makeGallery('https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format'),
+    images: makeGallery('https://images.unsplash.com/photo-1632826727346-43a7ac6bcb1b?auto=format'),
     colors: [
       { name: 'Dusty Lilac', hex: '#8E7C93' },
       { name: 'Antique Gold', hex: '#C9A96E' },
@@ -276,7 +276,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     category: 'Dresses',
     price: 1099,
     mrp: 1999,
-    images: makeGallery('https://images.unsplash.com/photo-1550614000-4895a10e1bfd?auto=format'),
+    images: makeGallery('https://images.unsplash.com/photo-1789110854238-ca55b1a3559c?auto=format'),
     colors: [
       { name: 'Warm Cinnamon', hex: '#873B1B' },
       { name: 'Deep Navy', hex: '#1E293B' },
@@ -324,7 +324,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     category: 'Dresses',
     price: 1149,
     mrp: 1999,
-    images: makeGallery('https://images.unsplash.com/photo-1572804013427-4d7ca7268217?auto=format'),
+    images: makeGallery('https://images.unsplash.com/photo-1755456785144-534e2d220ae8?auto=format'),
     colors: [
       { name: 'Champagne Gold', hex: '#DFCBB5' },
       { name: 'Espresso Bronze', hex: '#4A3528' },
@@ -350,7 +350,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     category: 'Co-ord Sets',
     price: 1299,
     mrp: 2199,
-    images: makeGallery('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format'),
+    images: makeGallery('https://images.unsplash.com/photo-1774005906344-57048d3f5856?auto=format'),
     colors: [
       { name: 'Sand Khaki', hex: '#C2B49A' },
       { name: 'Terracotta Spice', hex: '#B85324' },
@@ -374,7 +374,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     category: 'Co-ord Sets',
     price: 1099,
     mrp: 1899,
-    images: makeGallery('https://images.unsplash.com/photo-1516762689617-e1cffcef479d?auto=format'),
+    images: makeGallery('https://images.unsplash.com/photo-1767631550623-7e64ceae9445?auto=format'),
     colors: [
       { name: 'Cafe au Lait Stripe', hex: '#9E8873' },
       { name: 'Navy Nautical', hex: '#1C2E4A' },
@@ -398,7 +398,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     category: 'Co-ord Sets',
     price: 1399,
     mrp: 2399,
-    images: makeGallery('https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format'),
+    images: makeGallery('https://images.unsplash.com/photo-1759229874681-39fb36b01e32?auto=format'),
     colors: [
       { name: 'Caramel Toffee', hex: '#965C38' },
       { name: 'Ivory Frost', hex: '#EDE8DF' },
@@ -448,7 +448,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     category: 'Lehengas',
     price: 2999,
     mrp: 5499,
-    images: makeGallery('https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format'),
+    images: makeGallery('https://images.unsplash.com/photo-1693336429270-094637e16d38?auto=format'),
     colors: [
       { name: 'Heritage Maroon', hex: '#631726' },
       { name: 'Royal Rani Pink', hex: '#B8285A' },
@@ -472,7 +472,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     category: 'Lehengas',
     price: 2499,
     mrp: 4499,
-    images: makeGallery('https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format'),
+    images: makeGallery('https://images.unsplash.com/photo-1676285789557-3bb4450bb67f?auto=format'),
     colors: [
       { name: 'Ivory Pearl', hex: '#F7F3EC' },
       { name: 'Golden Marigold', hex: '#E29E2E' },
@@ -496,7 +496,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     category: 'Lehengas',
     price: 2199,
     mrp: 3999,
-    images: makeGallery('https://images.unsplash.com/photo-1574634534894-89d7576c8259?auto=format'),
+    images: makeGallery('https://images.unsplash.com/photo-1551726824-bbeab11db685?auto=format'),
     colors: [
       { name: 'Wine Mulberry', hex: '#4F1D2C' },
       { name: 'Emerald Velvet', hex: '#16382B' },
@@ -520,7 +520,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     category: 'Lehengas',
     price: 2799,
     mrp: 4999,
-    images: makeGallery('https://images.unsplash.com/photo-1518049362265-d5b2a6467637?auto=format'),
+    images: makeGallery('https://images.unsplash.com/photo-1756483510859-c0ab4c45782c?auto=format'),
     colors: [
       { name: 'Midnight Obsidian', hex: '#1B1C22' },
       { name: 'Rose Gold Shimmer', hex: '#B57C76' },
@@ -546,7 +546,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     category: 'Tops',
     price: 549,
     mrp: 999,
-    images: makeGallery('https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format'),
+    images: makeGallery('https://images.unsplash.com/photo-1756483510802-0acac24ab4e8?auto=format'),
     colors: [
       { name: 'Warm Terracotta', hex: '#C05621' },
       { name: 'Ivory Cream', hex: '#F9F6F0' },
@@ -570,7 +570,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     category: 'Tops',
     price: 449,
     mrp: 799,
-    images: makeGallery('https://images.unsplash.com/photo-1551803091-e20673f15770?auto=format'),
+    images: makeGallery('https://images.unsplash.com/photo-1515734674582-29010bb37906?auto=format'),
     colors: [
       { name: 'Soft Champagne', hex: '#D6C7B2' },
       { name: 'Deep Ink', hex: '#2B2118' },
@@ -618,7 +618,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     category: 'Tops',
     price: 399,
     mrp: 699,
-    images: makeGallery('https://images.unsplash.com/photo-1503342394128-c104d54dba01?auto=format'),
+    images: makeGallery('https://images.unsplash.com/photo-1789110855604-b693bd403e43?auto=format'),
     colors: [
       { name: 'Deep Cocoa', hex: '#3B2A22' },
       { name: 'Warm Ochre', hex: '#D49B42' },

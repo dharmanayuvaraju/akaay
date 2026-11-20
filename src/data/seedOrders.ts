@@ -77,7 +77,7 @@ export const INITIAL_ORDERS: Order[] = [
       {
         productId: 'aky-13',
         name: 'Zoya Linen Co-ord',
-        image: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=400&h=500&q=80',
+        image: 'https://images.unsplash.com/photo-1774005906344-57048d3f5856?auto=format&fit=crop&w=400&h=500&q=80',
         price: 1299,
         mrp: 2199,
         size: 'M',
@@ -113,7 +113,7 @@ export const INITIAL_ORDERS: Order[] = [
       {
         productId: 'aky-17',
         name: 'Apsara Embroidered Lehenga',
-        image: 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=400&h=500&q=80',
+        image: 'https://images.unsplash.com/photo-1693336429270-094637e16d38?auto=format&fit=crop&w=400&h=500&q=80',
         price: 2999,
         mrp: 5499,
         size: 'L',

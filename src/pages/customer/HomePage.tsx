@@ -26,7 +26,7 @@ const HERO_SLIDES = [
     id: 3,
     title: 'Modern Linen Sets & Midi Silhouettes',
     subtitle: 'Effortless coordinated separates with artisan tailoring and relaxed ease.',
-    image: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1600&h=900&q=80',
+    image: 'https://images.unsplash.com/photo-1774005906344-57048d3f5856?auto=format&fit=crop&w=1600&h=900&q=80',
     link: '/shop/co-ord-sets',
     category: 'Boutique Capsule',
   },

@@ -82,8 +82,8 @@ interface StoreContextType {
 const StoreContext = createContext<StoreContextType | undefined>(undefined);
 
 const LS_KEYS = {
-  PRODUCTS: 'akaay_products',
-  ORDERS: 'akaay_orders',
+  PRODUCTS: 'akaay_products_v2',
+  ORDERS: 'akaay_orders_v2',
   CART: 'akaay_cart',
   WISHLIST: 'akaay_wishlist',
   CUSTOMER_USER: 'akaay_customer_user',
