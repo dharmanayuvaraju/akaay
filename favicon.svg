@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="16" fill="#FBF7F0"/>
+  <circle cx="32" cy="32" r="28" stroke="#C05621" stroke-width="2.5" fill="#FBF7F0"/>
+  <circle cx="32" cy="32" r="24.5" stroke="#E9B44C" stroke-width="1" stroke-dasharray="3 3" fill="none"/>
+  <!-- Unmistakable Capital A Monogram -->
+  <path d="M32 12L17 48H23.8L27.5 39H36.5L40.2 48H47L32 12ZM32 21.5L34.6 33.5H29.4L32 21.5Z" fill="#C05621"/>
+</svg>
