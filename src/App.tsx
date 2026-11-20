@@ -35,7 +35,7 @@ const PageLoader = () => (
 export function App() {
   return (
     <StoreProvider>
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <Suspense fallback={<PageLoader />}>
           <Routes>
             {/* Customer Routes */}
