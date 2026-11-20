@@ -47,8 +47,8 @@ export const getOwnerCustomerWhatsAppUrl = (order: Order) => {
   const phone = customerNumber.startsWith('91')
     ? customerNumber
     : customerNumber.length === 10
-    ? `91${customerNumber}`
-    : BOUTIQUE_PHONE;
+      ? `91${customerNumber}`
+      : BOUTIQUE_PHONE;
 
   let text = `Namaste ${order.address.fullName}! This is Akaay Boutique regarding your Order #${order.id}.\n\n`;
   text += `Current status: *${order.status}*.\n`;

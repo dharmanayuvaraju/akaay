@@ -39,21 +39,24 @@ export const CATEGORIES: { name: Category; slug: string; image: string; tag: str
   },
 ];
 
+// Helper to generate consistent shots of the exact SAME garment
+const makeGallery = (baseUrl: string) => [
+  `${baseUrl}&fit=crop&w=800&h=1000&q=80`,
+  `${baseUrl}&fit=crop&w=800&h=1000&q=80&crop=faces,top`,
+  `${baseUrl}&fit=crop&w=800&h=1000&q=80&crop=bottom`,
+  `${baseUrl}&fit=crop&w=800&h=1000&q=80&crop=center`,
+];
+
 export const INITIAL_PRODUCTS: Product[] = [
-  // SAREES (4)
+  // 1. SAREES (4)
   {
-    id: 'mhr-01',
-    slug: 'gulnar-banarasi-silk-saree',
+    id: 'aky-01',
+    slug: 'aky-01-gulnar-banarasi-silk-saree',
     name: 'Gulnar Banarasi Silk Saree',
     category: 'Sarees',
     price: 1449,
     mrp: 2499,
-    images: [
-      'https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&h=1000&q=80',
-      'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=800&h=1000&q=80',
-      'https://images.unsplash.com/photo-1609357605129-26f69add5d6e?auto=format&fit=crop&w=800&h=1000&q=80',
-      'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=800&h=1000&q=80',
-    ],
+    images: makeGallery('https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format'),
     colors: [
       { name: 'Vermillion Red', hex: '#8B1E1E' },
       { name: 'Royal Emerald', hex: '#1C4A38' },
@@ -71,17 +74,13 @@ export const INITIAL_PRODUCTS: Product[] = [
     isNew: false,
   },
   {
-    id: 'mhr-02',
-    slug: 'mehr-floral-organza-saree',
-    name: 'Mehr Floral Organza Saree',
+    id: 'aky-02',
+    slug: 'aky-02-gulmohar-floral-organza-saree',
+    name: 'Gulmohar Floral Organza Saree',
     category: 'Sarees',
     price: 1099,
     mrp: 1899,
-    images: [
-      'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=800&h=1000&q=80',
-      'https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&h=1000&q=80',
-      'https://images.unsplash.com/photo-1609357605129-26f69add5d6e?auto=format&fit=crop&w=800&h=1000&q=80',
-    ],
+    images: makeGallery('https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format'),
     colors: [
       { name: 'Blush Rose', hex: '#DE9B9B' },
       { name: 'Sage Frost', hex: '#94A684' },
@@ -99,17 +98,13 @@ export const INITIAL_PRODUCTS: Product[] = [
     isNew: true,
   },
   {
-    id: 'mhr-03',
-    slug: 'tara-handloom-cotton-saree',
+    id: 'aky-03',
+    slug: 'aky-03-tara-handloom-cotton-saree',
     name: 'Tara Handloom Cotton Saree',
     category: 'Sarees',
     price: 899,
     mrp: 1599,
-    images: [
-      'https://images.unsplash.com/photo-1609357605129-26f69add5d6e?auto=format&fit=crop&w=800&h=1000&q=80',
-      'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=800&h=1000&q=80',
-      'https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&h=1000&q=80',
-    ],
+    images: makeGallery('https://images.unsplash.com/photo-1609357605129-26f69add5d6e?auto=format'),
     colors: [
       { name: 'Terracotta Earth', hex: '#C05621' },
       { name: 'Indigo Dusk', hex: '#2A4365' },
@@ -127,17 +122,13 @@ export const INITIAL_PRODUCTS: Product[] = [
     isNew: false,
   },
   {
-    id: 'mhr-04',
-    slug: 'rumi-satin-saree-with-blouse',
+    id: 'aky-04',
+    slug: 'aky-04-rumi-satin-saree-with-blouse',
     name: 'Rumi Satin Saree with Blouse',
     category: 'Sarees',
     price: 1249,
     mrp: 2199,
-    images: [
-      'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&w=800&h=1000&q=80',
-      'https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&h=1000&q=80',
-      'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=800&h=1000&q=80',
-    ],
+    images: makeGallery('https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format'),
     colors: [
       { name: 'Wine Plum', hex: '#4A1525' },
       { name: 'Champagne Taupe', hex: '#C5B5A1' },
@@ -155,20 +146,15 @@ export const INITIAL_PRODUCTS: Product[] = [
     isNew: true,
   },
 
-  // KURTA SETS (4)
+  // 2. KURTA SETS (4)
   {
-    id: 'mhr-05',
-    slug: 'zeenat-chikankari-kurta-set',
+    id: 'aky-05',
+    slug: 'aky-05-zeenat-chikankari-kurta-set',
     name: 'Zeenat Chikankari Kurta Set',
     category: 'Kurta Sets',
     price: 1199,
     mrp: 2299,
-    images: [
-      'https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=800&h=1000&q=80',
-      'https://images.unsplash.com/photo-1596783074918-c84cb06531ca?auto=format&fit=crop&w=800&h=1000&q=80',
-      'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&h=1000&q=80',
-      'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&h=1000&q=80',
-    ],
+    images: makeGallery('https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format'),
     colors: [
       { name: 'Ivory White', hex: '#FAF6EF' },
       { name: 'Powder Sage', hex: '#A3B19B' },
@@ -186,17 +172,13 @@ export const INITIAL_PRODUCTS: Product[] = [
     isNew: false,
   },
   {
-    id: 'mhr-06',
-    slug: 'amaltas-anarkali-set-with-dupatta',
+    id: 'aky-06',
+    slug: 'aky-06-amaltas-anarkali-set-with-dupatta',
     name: 'Amaltas Anarkali Set with Dupatta',
     category: 'Kurta Sets',
     price: 1499,
     mrp: 2799,
-    images: [
-      'https://images.unsplash.com/photo-1596783074918-c84cb06531ca?auto=format&fit=crop&w=800&h=1000&q=80',
-      'https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=800&h=1000&q=80',
-      'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&h=1000&q=80',
-    ],
+    images: makeGallery('https://images.unsplash.com/photo-1596783074918-c84cb06531ca?auto=format'),
     colors: [
       { name: 'Marigold Yellow', hex: '#E9B44C' },
       { name: 'Crimson Clay', hex: '#9E382B' },
@@ -214,17 +196,13 @@ export const INITIAL_PRODUCTS: Product[] = [
     isNew: false,
   },
   {
-    id: 'mhr-07',
-    slug: 'noor-straight-kurta-palazzo',
+    id: 'aky-07',
+    slug: 'aky-07-noor-straight-kurta-palazzo',
     name: 'Noor Straight Kurta & Palazzo',
     category: 'Kurta Sets',
     price: 999,
     mrp: 1799,
-    images: [
-      'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&h=1000&q=80',
-      'https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=800&h=1000&q=80',
-      'https://images.unsplash.com/photo-1596783074918-c84cb06531ca?auto=format&fit=crop&w=800&h=1000&q=80',
-    ],
+    images: makeGallery('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format'),
     colors: [
       { name: 'Warm Terracotta', hex: '#C05621' },
       { name: 'Charcoal Cocoa', hex: '#3B2F2F' },
@@ -242,17 +220,13 @@ export const INITIAL_PRODUCTS: Product[] = [
     isNew: true,
   },
   {
-    id: 'mhr-08',
-    slug: 'falak-sharara-set',
+    id: 'aky-08',
+    slug: 'aky-08-falak-sharara-set',
     name: 'Falak Sharara Set',
     category: 'Kurta Sets',
     price: 1699,
     mrp: 2999,
-    images: [
-      'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&h=1000&q=80',
-      'https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=800&h=1000&q=80',
-      'https://images.unsplash.com/photo-1596783074918-c84cb06531ca?auto=format&fit=crop&w=800&h=1000&q=80',
-    ],
+    images: makeGallery('https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format'),
     colors: [
       { name: 'Dusty Lilac', hex: '#8E7C93' },
       { name: 'Antique Gold', hex: '#C9A96E' },
@@ -270,19 +244,15 @@ export const INITIAL_PRODUCTS: Product[] = [
     isNew: true,
   },
 
-  // DRESSES (4)
+  // 3. DRESSES (4)
   {
-    id: 'mhr-09',
-    slug: 'iris-smocked-midi-dress',
+    id: 'aky-09',
+    slug: 'aky-09-iris-smocked-midi-dress',
     name: 'Iris Smocked Midi Dress',
     category: 'Dresses',
     price: 899,
     mrp: 1499,
-    images: [
-      'https://images.unsplash.com/photo-1502716119720-b23a93e5fe1b?auto=format&fit=crop&w=800&h=1000&q=80',
-      'https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=800&h=1000&q=80',
-      'https://images.unsplash.com/photo-1550614000-4895a10e1bfd?auto=format&fit=crop&w=800&h=1000&q=80',
-    ],
+    images: makeGallery('https://images.unsplash.com/photo-1502716119720-b23a93e5fe1b?auto=format'),
     colors: [
       { name: 'Oatmeal Beige', hex: '#D8CBBF' },
       { name: 'Terracotta Rust', hex: '#B85324' },
@@ -300,17 +270,13 @@ export const INITIAL_PRODUCTS: Product[] = [
     isNew: false,
   },
   {
-    id: 'mhr-10',
-    slug: 'sana-wrap-maxi-dress',
+    id: 'aky-10',
+    slug: 'aky-10-sana-wrap-maxi-dress',
     name: 'Sana Wrap Maxi Dress',
     category: 'Dresses',
     price: 1099,
     mrp: 1999,
-    images: [
-      'https://images.unsplash.com/photo-1550614000-4895a10e1bfd?auto=format&fit=crop&w=800&h=1000&q=80',
-      'https://images.unsplash.com/photo-1502716119720-b23a93e5fe1b?auto=format&fit=crop&w=800&h=1000&q=80',
-      'https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=800&h=1000&q=80',
-    ],
+    images: makeGallery('https://images.unsplash.com/photo-1550614000-4895a10e1bfd?auto=format'),
     colors: [
       { name: 'Warm Cinnamon', hex: '#873B1B' },
       { name: 'Deep Navy', hex: '#1E293B' },
@@ -328,17 +294,13 @@ export const INITIAL_PRODUCTS: Product[] = [
     isNew: true,
   },
   {
-    id: 'mhr-11',
-    slug: 'alia-floral-tiered-dress',
+    id: 'aky-11',
+    slug: 'aky-11-alia-floral-tiered-dress',
     name: 'Alia Floral Tiered Dress',
     category: 'Dresses',
     price: 949,
     mrp: 1699,
-    images: [
-      'https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=800&h=1000&q=80',
-      'https://images.unsplash.com/photo-1502716119720-b23a93e5fe1b?auto=format&fit=crop&w=800&h=1000&q=80',
-      'https://images.unsplash.com/photo-1550614000-4895a10e1bfd?auto=format&fit=crop&w=800&h=1000&q=80',
-    ],
+    images: makeGallery('https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format'),
     colors: [
       { name: 'Vintage Gardenia', hex: '#EDE3D2' },
       { name: 'Muted Rose', hex: '#C27D7D' },
@@ -356,17 +318,13 @@ export const INITIAL_PRODUCTS: Product[] = [
     isNew: true,
   },
   {
-    id: 'mhr-12',
-    slug: 'mira-satin-slip-dress',
+    id: 'aky-12',
+    slug: 'aky-12-mira-satin-slip-dress',
     name: 'Mira Satin Slip Dress',
     category: 'Dresses',
     price: 1149,
     mrp: 1999,
-    images: [
-      'https://images.unsplash.com/photo-1572804013427-4d7ca7268217?auto=format&fit=crop&w=800&h=1000&q=80',
-      'https://images.unsplash.com/photo-1502716119720-b23a93e5fe1b?auto=format&fit=crop&w=800&h=1000&q=80',
-      'https://images.unsplash.com/photo-1550614000-4895a10e1bfd?auto=format&fit=crop&w=800&h=1000&q=80',
-    ],
+    images: makeGallery('https://images.unsplash.com/photo-1572804013427-4d7ca7268217?auto=format'),
     colors: [
       { name: 'Champagne Gold', hex: '#DFCBB5' },
       { name: 'Espresso Bronze', hex: '#4A3528' },
@@ -384,20 +342,15 @@ export const INITIAL_PRODUCTS: Product[] = [
     isNew: false,
   },
 
-  // CO-ORD SETS (4)
+  // 4. CO-ORD SETS (4)
   {
-    id: 'mhr-13',
-    slug: 'zoya-linen-co-ord',
+    id: 'aky-13',
+    slug: 'aky-13-zoya-linen-co-ord',
     name: 'Zoya Linen Co-ord',
     category: 'Co-ord Sets',
     price: 1299,
     mrp: 2199,
-    images: [
-      'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=800&h=1000&q=80',
-      'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=800&h=1000&q=80',
-      'https://images.unsplash.com/photo-1516762689617-e1cffcef479d?auto=format&fit=crop&w=800&h=1000&q=80',
-      'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&h=1000&q=80',
-    ],
+    images: makeGallery('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format'),
     colors: [
       { name: 'Sand Khaki', hex: '#C2B49A' },
       { name: 'Terracotta Spice', hex: '#B85324' },
@@ -415,17 +368,13 @@ export const INITIAL_PRODUCTS: Product[] = [
     isNew: false,
   },
   {
-    id: 'mhr-14',
-    slug: 'rhea-striped-shirt-trouser-set',
+    id: 'aky-14',
+    slug: 'aky-14-rhea-striped-shirt-trouser-set',
     name: 'Rhea Striped Shirt & Trouser Set',
     category: 'Co-ord Sets',
     price: 1099,
     mrp: 1899,
-    images: [
-      'https://images.unsplash.com/photo-1516762689617-e1cffcef479d?auto=format&fit=crop&w=800&h=1000&q=80',
-      'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=800&h=1000&q=80',
-      'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=800&h=1000&q=80',
-    ],
+    images: makeGallery('https://images.unsplash.com/photo-1516762689617-e1cffcef479d?auto=format'),
     colors: [
       { name: 'Cafe au Lait Stripe', hex: '#9E8873' },
       { name: 'Navy Nautical', hex: '#1C2E4A' },
@@ -443,17 +392,13 @@ export const INITIAL_PRODUCTS: Product[] = [
     isNew: true,
   },
   {
-    id: 'mhr-15',
-    slug: 'kyra-knit-co-ord',
+    id: 'aky-15',
+    slug: 'aky-15-kyra-knit-co-ord',
     name: 'Kyra Knit Co-ord',
     category: 'Co-ord Sets',
     price: 1399,
     mrp: 2399,
-    images: [
-      'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=800&h=1000&q=80',
-      'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=800&h=1000&q=80',
-      'https://images.unsplash.com/photo-1516762689617-e1cffcef479d?auto=format&fit=crop&w=800&h=1000&q=80',
-    ],
+    images: makeGallery('https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format'),
     colors: [
       { name: 'Caramel Toffee', hex: '#965C38' },
       { name: 'Ivory Frost', hex: '#EDE8DF' },
@@ -471,17 +416,13 @@ export const INITIAL_PRODUCTS: Product[] = [
     isNew: false,
   },
   {
-    id: 'mhr-16',
-    slug: 'inaaya-printed-co-ord',
+    id: 'aky-16',
+    slug: 'aky-16-inaaya-printed-co-ord',
     name: 'Inaaya Printed Co-ord',
     category: 'Co-ord Sets',
     price: 1049,
     mrp: 1899,
-    images: [
-      'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&h=1000&q=80',
-      'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=800&h=1000&q=80',
-      'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=800&h=1000&q=80',
-    ],
+    images: makeGallery('https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format'),
     colors: [
       { name: 'Marigold Botanical', hex: '#D89E30' },
       { name: 'Indigo Leaf', hex: '#263859' },
@@ -499,20 +440,15 @@ export const INITIAL_PRODUCTS: Product[] = [
     isNew: true,
   },
 
-  // LEHENGAS (4)
+  // 5. LEHENGAS (4)
   {
-    id: 'mhr-17',
-    slug: 'apsara-embroidered-lehenga',
+    id: 'aky-17',
+    slug: 'aky-17-apsara-embroidered-lehenga',
     name: 'Apsara Embroidered Lehenga',
     category: 'Lehengas',
     price: 2999,
     mrp: 5499,
-    images: [
-      'https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=800&h=1000&q=80',
-      'https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=800&h=1000&q=80',
-      'https://images.unsplash.com/photo-1574634534894-89d7576c8259?auto=format&fit=crop&w=800&h=1000&q=80',
-      'https://images.unsplash.com/photo-1518049362265-d5b2a6467637?auto=format&fit=crop&w=800&h=1000&q=80',
-    ],
+    images: makeGallery('https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format'),
     colors: [
       { name: 'Heritage Maroon', hex: '#631726' },
       { name: 'Royal Rani Pink', hex: '#B8285A' },
@@ -530,17 +466,13 @@ export const INITIAL_PRODUCTS: Product[] = [
     isNew: false,
   },
   {
-    id: 'mhr-18',
-    slug: 'chandni-mirror-work-lehenga',
+    id: 'aky-18',
+    slug: 'aky-18-chandni-mirror-work-lehenga',
     name: 'Chandni Mirror-work Lehenga',
     category: 'Lehengas',
     price: 2499,
     mrp: 4499,
-    images: [
-      'https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=800&h=1000&q=80',
-      'https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=800&h=1000&q=80',
-      'https://images.unsplash.com/photo-1574634534894-89d7576c8259?auto=format&fit=crop&w=800&h=1000&q=80',
-    ],
+    images: makeGallery('https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format'),
     colors: [
       { name: 'Ivory Pearl', hex: '#F7F3EC' },
       { name: 'Golden Marigold', hex: '#E29E2E' },
@@ -558,17 +490,13 @@ export const INITIAL_PRODUCTS: Product[] = [
     isNew: false,
   },
   {
-    id: 'mhr-19',
-    slug: 'gulnaar-georgette-lehenga',
+    id: 'aky-19',
+    slug: 'aky-19-gulnaar-georgette-lehenga',
     name: 'Gulnaar Georgette Lehenga',
     category: 'Lehengas',
     price: 2199,
     mrp: 3999,
-    images: [
-      'https://images.unsplash.com/photo-1574634534894-89d7576c8259?auto=format&fit=crop&w=800&h=1000&q=80',
-      'https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=800&h=1000&q=80',
-      'https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=800&h=1000&q=80',
-    ],
+    images: makeGallery('https://images.unsplash.com/photo-1574634534894-89d7576c8259?auto=format'),
     colors: [
       { name: 'Wine Mulberry', hex: '#4F1D2C' },
       { name: 'Emerald Velvet', hex: '#16382B' },
@@ -586,17 +514,13 @@ export const INITIAL_PRODUCTS: Product[] = [
     isNew: true,
   },
   {
-    id: 'mhr-20',
-    slug: 'sitara-cape-lehenga',
+    id: 'aky-20',
+    slug: 'aky-20-sitara-cape-lehenga',
     name: 'Sitara Cape Lehenga',
     category: 'Lehengas',
     price: 2799,
     mrp: 4999,
-    images: [
-      'https://images.unsplash.com/photo-1518049362265-d5b2a6467637?auto=format&fit=crop&w=800&h=1000&q=80',
-      'https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=800&h=1000&q=80',
-      'https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=800&h=1000&q=80',
-    ],
+    images: makeGallery('https://images.unsplash.com/photo-1518049362265-d5b2a6467637?auto=format'),
     colors: [
       { name: 'Midnight Obsidian', hex: '#1B1C22' },
       { name: 'Rose Gold Shimmer', hex: '#B57C76' },
@@ -614,19 +538,15 @@ export const INITIAL_PRODUCTS: Product[] = [
     isNew: true,
   },
 
-  // TOPS (4)
+  // 6. TOPS (4)
   {
-    id: 'mhr-21',
-    slug: 'pia-smocked-peplum-top',
+    id: 'aky-21',
+    slug: 'aky-21-pia-smocked-peplum-top',
     name: 'Pia Smocked Peplum Top',
     category: 'Tops',
     price: 549,
     mrp: 999,
-    images: [
-      'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&h=1000&q=80',
-      'https://images.unsplash.com/photo-1551803091-e20673f15770?auto=format&fit=crop&w=800&h=1000&q=80',
-      'https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=800&h=1000&q=80',
-    ],
+    images: makeGallery('https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format'),
     colors: [
       { name: 'Warm Terracotta', hex: '#C05621' },
       { name: 'Ivory Cream', hex: '#F9F6F0' },
@@ -644,17 +564,13 @@ export const INITIAL_PRODUCTS: Product[] = [
     isNew: false,
   },
   {
-    id: 'mhr-22',
-    slug: 'myra-satin-camisole',
+    id: 'aky-22',
+    slug: 'aky-22-myra-satin-camisole',
     name: 'Myra Satin Camisole',
     category: 'Tops',
     price: 449,
     mrp: 799,
-    images: [
-      'https://images.unsplash.com/photo-1551803091-e20673f15770?auto=format&fit=crop&w=800&h=1000&q=80',
-      'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&h=1000&q=80',
-      'https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=800&h=1000&q=80',
-    ],
+    images: makeGallery('https://images.unsplash.com/photo-1551803091-e20673f15770?auto=format'),
     colors: [
       { name: 'Soft Champagne', hex: '#D6C7B2' },
       { name: 'Deep Ink', hex: '#2B2118' },
@@ -672,17 +588,13 @@ export const INITIAL_PRODUCTS: Product[] = [
     isNew: true,
   },
   {
-    id: 'mhr-23',
-    slug: 'ela-embroidered-blouse-top',
+    id: 'aky-23',
+    slug: 'aky-23-ela-embroidered-blouse-top',
     name: 'Ela Embroidered Blouse Top',
     category: 'Tops',
     price: 649,
     mrp: 1099,
-    images: [
-      'https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=800&h=1000&q=80',
-      'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&h=1000&q=80',
-      'https://images.unsplash.com/photo-1551803091-e20673f15770?auto=format&fit=crop&w=800&h=1000&q=80',
-    ],
+    images: makeGallery('https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format'),
     colors: [
       { name: 'Raw Ecru', hex: '#E8DFD1' },
       { name: 'Mustard Clay', hex: '#BD8B3B' },
@@ -700,17 +612,13 @@ export const INITIAL_PRODUCTS: Product[] = [
     isNew: false,
   },
   {
-    id: 'mhr-24',
-    slug: 'ria-ribbed-crop-top',
+    id: 'aky-24',
+    slug: 'aky-24-ria-ribbed-crop-top',
     name: 'Ria Ribbed Crop Top',
     category: 'Tops',
     price: 399,
     mrp: 699,
-    images: [
-      'https://images.unsplash.com/photo-1503342394128-c104d54dba01?auto=format&fit=crop&w=800&h=1000&q=80',
-      'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&h=1000&q=80',
-      'https://images.unsplash.com/photo-1551803091-e20673f15770?auto=format&fit=crop&w=800&h=1000&q=80',
-    ],
+    images: makeGallery('https://images.unsplash.com/photo-1503342394128-c104d54dba01?auto=format'),
     colors: [
       { name: 'Deep Cocoa', hex: '#3B2A22' },
       { name: 'Warm Ochre', hex: '#D49B42' },
@@ -737,7 +645,7 @@ export const REVIEWS = [
     rating: 5,
     date: '3 days ago',
     comment:
-      'The Gulnar Banarasi saree drape is sublime! The zari doesn’t poke at all, and it arrived beautifully wrapped in scented tissue with a handwritten note.',
+      'The Gulnar Banarasi saree drape is sublime! The zari does not poke at all, and it arrived beautifully wrapped in scented tissue with a handwritten note.',
     productName: 'Gulnar Banarasi Silk Saree',
   },
   {
@@ -767,7 +675,7 @@ export const REVIEWS = [
     rating: 4.5,
     date: '3 weeks ago',
     comment:
-      'The mirror work lehenga has incredible flare. Got endless compliments at my cousin’s sangeet. Highly recommend the custom sizing assistance over WhatsApp!',
+      'The mirror work lehenga has incredible flare. Got endless compliments at my cousin sangeet. Highly recommend the custom sizing assistance over WhatsApp!',
     productName: 'Chandni Mirror-work Lehenga',
   },
 ];

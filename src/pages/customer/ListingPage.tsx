@@ -224,7 +224,7 @@ export const ListingPage: React.FC = () => {
                   }`}
                 >
                   <span>{item.label}</span>
-                  {selectedPriceBand === item.val && <span>✓</span>}
+                  {selectedPriceBand === item.val && <span className="text-[10px] uppercase font-bold tracking-wider">Active</span>}
                 </button>
               ))}
             </div>
@@ -387,7 +387,7 @@ export const ListingPage: React.FC = () => {
                     }`}
                   >
                     <span>{item.label}</span>
-                    {selectedPriceBand === item.val && <span>✓</span>}
+                    {selectedPriceBand === item.val && <span className="text-[10px] font-bold">Selected</span>}
                   </button>
                 ))}
               </div>

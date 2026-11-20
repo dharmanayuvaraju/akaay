@@ -28,7 +28,7 @@ export const INITIAL_ORDERS: Order[] = [
     id: 'AKY-2415',
     items: [
       {
-        productId: 'mhr-01',
+        productId: 'aky-01',
         name: 'Gulnar Banarasi Silk Saree',
         image: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=400&h=500&q=80',
         price: 1449,
@@ -65,7 +65,7 @@ export const INITIAL_ORDERS: Order[] = [
     id: 'AKY-2416',
     items: [
       {
-        productId: 'mhr-05',
+        productId: 'aky-05',
         name: 'Zeenat Chikankari Kurta Set',
         image: 'https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=400&h=500&q=80',
         price: 1199,
@@ -75,7 +75,7 @@ export const INITIAL_ORDERS: Order[] = [
         quantity: 1,
       },
       {
-        productId: 'mhr-13',
+        productId: 'aky-13',
         name: 'Zoya Linen Co-ord',
         image: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=400&h=500&q=80',
         price: 1299,
@@ -111,7 +111,7 @@ export const INITIAL_ORDERS: Order[] = [
     id: 'AKY-2417',
     items: [
       {
-        productId: 'mhr-17',
+        productId: 'aky-17',
         name: 'Apsara Embroidered Lehenga',
         image: 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=400&h=500&q=80',
         price: 2999,

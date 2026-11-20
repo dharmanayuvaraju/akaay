@@ -244,7 +244,7 @@ export const CheckoutPage: React.FC = () => {
             <div className="bg-ivory rounded-lg border border-ivory-400 p-4 flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <span className="w-6 h-6 rounded-full bg-emerald-600 text-white text-xs font-bold flex items-center justify-center">
-                  ✓
+                  1
                 </span>
                 <div>
                   <h4 className="font-serif text-sm font-medium text-ink">Signed in as {customerUser.name}</h4>

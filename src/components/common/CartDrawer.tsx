@@ -97,7 +97,7 @@ export const CartDrawer: React.FC = () => {
           <div className="bg-ivory-200 px-4 py-2 text-xs border-b border-ivory-300">
             {subtotal >= 1499 ? (
               <span className="text-emerald-700 font-semibold flex items-center gap-1">
-                ✓ You have unlocked FREE Express Delivery!
+                <span>Free Express Delivery Unlocked</span>
               </span>
             ) : (
               <span className="text-ink-600">

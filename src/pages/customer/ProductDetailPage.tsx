@@ -333,7 +333,7 @@ export const ProductDetailPage: React.FC = () => {
             {/* Low-Stock alert message */}
             {selectedSize && stockForSelectedSize > 0 && stockForSelectedSize <= 3 && (
               <p className="text-xs text-amber-700 font-medium">
-                ⚡ Only {stockForSelectedSize} ensembles remaining in size {selectedSize}!
+                Only {stockForSelectedSize} ensembles remaining in size {selectedSize}.
               </p>
             )}
             {selectedSize && isSelectedSizeOutOfStock && (

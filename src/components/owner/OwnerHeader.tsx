@@ -36,11 +36,10 @@ export const OwnerHeader: React.FC = () => {
                 <span className="text-ivory-400">Signed in as:</span>
                 <span className="font-medium text-ivory">{ownerUser.name}</span>
                 <span
-                  className={`text-[10px] uppercase font-bold px-2 py-0.5 rounded ${
-                    ownerUser.role === 'owner'
-                      ? 'bg-marigold text-ink-900'
-                      : 'bg-terracotta text-white'
-                  }`}
+                  className={`text-[10px] uppercase font-bold px-2 py-0.5 rounded ${ownerUser.role === 'owner'
+                    ? 'bg-marigold text-ink-900'
+                    : 'bg-terracotta text-white'
+                    }`}
                 >
                   {ownerUser.role}
                 </span>

@@ -152,13 +152,12 @@ export const OwnerLoginPage: React.FC = () => {
               <button
                 type="button"
                 onClick={() => handleQuickFill('7337422054')}
-                className={`p-2.5 rounded border text-left transition-all ${
-                  phone === '7337422054'
+                className={`p-2.5 rounded border text-left transition-all ${phone === '7337422054'
                     ? 'border-terracotta bg-terracotta/10 text-terracotta font-semibold'
                     : 'border-ivory-400 bg-ivory-100 text-ink'
-                }`}
+                  }`}
               >
-                <span className="block font-bold">👑 Store Owner (Yuvaraj)</span>
+                <span className="block font-bold">Store Owner (Yuvaraj)</span>
                 <span className="text-[10px] text-ink-500 block">Full Inventory & Staff</span>
                 <span className="text-[10px] text-terracotta">73374 22054</span>
               </button>
@@ -166,13 +165,12 @@ export const OwnerLoginPage: React.FC = () => {
               <button
                 type="button"
                 onClick={() => handleQuickFill('9876543210')}
-                className={`p-2.5 rounded border text-left transition-all ${
-                  phone === '9876543210'
+                className={`p-2.5 rounded border text-left transition-all ${phone === '9876543210'
                     ? 'border-terracotta bg-terracotta/10 text-terracotta font-semibold'
                     : 'border-ivory-400 bg-ivory-100 text-ink'
-                }`}
+                  }`}
               >
-                <span className="block font-bold">💼 Staff (Manager)</span>
+                <span className="block font-bold">Staff Manager</span>
                 <span className="text-[10px] text-ink-500 block">Orders only (Protected)</span>
                 <span className="text-[10px] text-terracotta">98765 43210</span>
               </button>
