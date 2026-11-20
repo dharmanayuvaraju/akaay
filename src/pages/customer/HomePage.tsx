@@ -18,7 +18,7 @@ const HERO_SLIDES = [
     id: 2,
     title: 'Pure Mulmul & Chikankari Suits',
     subtitle: 'Breathable afternoon silhouettes tailored with authentic Lucknowi stitches.',
-    image: 'https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=1600&h=900&q=80',
+    image: 'https://images.unsplash.com/photo-1632826727346-43a7ac6bcb1b?auto=format&fit=crop&w=1600&h=900&q=80',
     link: '/shop/kurta-sets',
     category: 'Daily Opulence',
   },

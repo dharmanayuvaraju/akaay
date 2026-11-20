@@ -55,7 +55,7 @@ export interface ShippingAddress {
 }
 
 export interface Order {
-  id: string; // e.g. "MHR-2417"
+  id: string; // e.g. "AKY-2417"
   items: OrderItem[];
   subtotal: number;
   discount: number;

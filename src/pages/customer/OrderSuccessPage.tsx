@@ -6,7 +6,7 @@ import { getOrderWhatsAppUrl } from '../../utils/whatsapp';
 
 export const OrderSuccessPage: React.FC = () => {
   const [searchParams] = useSearchParams();
-  const orderId = searchParams.get('orderId') || 'MHR-2417';
+  const orderId = searchParams.get('orderId') || 'AKY-2417';
   const { getOrder } = useStore();
 
   const order = getOrder(orderId);

@@ -11,11 +11,15 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Brand Blurb */}
           <div className="space-y-4 md:col-span-1">
-            <Link to="/" className="inline-block">
-              <span className="font-serif text-3xl tracking-tight text-ivory">Akaay</span>
-              <div className="flex items-center gap-1 mt-1">
-                <span className="h-0.5 w-6 border-b border-dashed border-terracotta" />
-                <span className="text-[10px] uppercase tracking-widest text-marigold">
+            <Link to="/" className="inline-flex items-center gap-3 group">
+              <div className="w-9 h-9 rounded-full bg-terracotta text-ivory flex items-center justify-center flex-shrink-0 shadow-sm ring-2 ring-terracotta/30 group-hover:scale-105 transition-transform">
+                <svg viewBox="0 0 24 24" className="w-4.5 h-4.5 fill-current" aria-hidden="true">
+                  <path d="M12 3L5 20H8.2L9.8 15.8H14.2L15.8 20H19L12 3ZM12 8.5L13.3 12.8H10.7L12 8.5Z" />
+                </svg>
+              </div>
+              <div className="flex flex-col">
+                <span className="font-serif text-2xl tracking-tight text-ivory">Akaay</span>
+                <span className="text-[10px] uppercase tracking-widest text-marigold font-semibold">
                   Boutique
                 </span>
               </div>
@@ -96,7 +100,7 @@ export const Footer: React.FC = () => {
           {/* Contact Block */}
           <div className="space-y-3">
             <h4 className="font-serif text-base text-ivory font-medium tracking-wide">
-              Atelier & Contact
+              Akaay Boutique
             </h4>
             <ul className="space-y-2.5 text-sm text-ivory-400">
               <li className="flex items-start gap-2.5">

@@ -67,7 +67,7 @@ export const INITIAL_ORDERS: Order[] = [
       {
         productId: 'aky-05',
         name: 'Zeenat Chikankari Kurta Set',
-        image: 'https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=400&h=500&q=80',
+        image: 'https://images.unsplash.com/photo-1632826727346-43a7ac6bcb1b?auto=format&fit=crop&w=400&h=500&q=80',
         price: 1199,
         mrp: 2299,
         size: 'M',

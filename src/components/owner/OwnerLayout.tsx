@@ -22,7 +22,7 @@ export const OwnerLayout: React.FC = () => {
   }
 
   const isOwner = ownerUser.role === 'owner';
-  const firstProductId = products[0]?.id || 'mhr-01';
+  const firstProductId = products[0]?.id || 'aky-01';
 
   const pendingOrdersCount = orders.filter((o) => o.status === 'Placed' || o.status === 'Packed').length;
 

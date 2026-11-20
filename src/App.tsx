@@ -28,7 +28,7 @@ const OwnerOffersPage = lazy(() => import('./pages/owner/OwnerOffersPage').then(
 const PageLoader = () => (
   <div className="min-h-[50vh] flex flex-col items-center justify-center space-y-3 bg-ivory">
     <div className="w-8 h-8 border-2 border-terracotta border-t-transparent rounded-full animate-spin" />
-    <span className="font-serif text-xs text-ink-500 tracking-wider">Loading Akaay Atelier...</span>
+    <span className="font-serif text-xs text-ink-500 tracking-wider">Loading Akaay Boutique...</span>
   </div>
 );
 

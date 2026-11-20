@@ -18,7 +18,12 @@ export const OwnerHeader: React.FC = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo & Back Office Badge */}
           <div className="flex items-center gap-3">
-            <Link to="/owner" className="flex items-center gap-2 group">
+            <Link to="/owner" className="flex items-center gap-2.5 group">
+              <div className="w-8 h-8 rounded-full bg-terracotta text-ivory flex items-center justify-center flex-shrink-0 shadow-sm ring-1 ring-terracotta/40">
+                <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current" aria-hidden="true">
+                  <path d="M12 3L5 20H8.2L9.8 15.8H14.2L15.8 20H19L12 3ZM12 8.5L13.3 12.8H10.7L12 8.5Z" />
+                </svg>
+              </div>
               <span className="font-serif text-2xl tracking-tight text-ivory group-hover:text-marigold transition-colors">
                 Akaay
               </span>

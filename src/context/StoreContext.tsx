@@ -234,7 +234,7 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   };
 
   const addProduct = (productData: Omit<Product, 'id'>) => {
-    const newId = `mhr-${Date.now().toString().slice(-4)}`;
+    const newId = `aky-${Date.now().toString().slice(-4)}`;
     const newProduct: Product = {
       ...productData,
       id: newId,

@@ -10,7 +10,7 @@ export const CATEGORIES: { name: Category; slug: string; image: string; tag: str
   {
     name: 'Kurta Sets',
     slug: 'kurta-sets',
-    image: 'https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=600&h=750&q=80',
+    image: 'https://images.unsplash.com/photo-1632826727346-43a7ac6bcb1b?auto=format&fit=crop&w=600&h=750&q=80',
     tag: 'Festive Everyday',
   },
   {
@@ -154,7 +154,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     category: 'Kurta Sets',
     price: 1199,
     mrp: 2299,
-    images: makeGallery('https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format'),
+    images: makeGallery('https://images.unsplash.com/photo-1632826727346-43a7ac6bcb1b?auto=format'),
     colors: [
       { name: 'Ivory White', hex: '#FAF6EF' },
       { name: 'Powder Sage', hex: '#A3B19B' },

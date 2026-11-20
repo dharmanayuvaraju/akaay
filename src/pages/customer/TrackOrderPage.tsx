@@ -88,7 +88,7 @@ export const TrackOrderPage: React.FC = () => {
               type="text"
               value={orderQuery}
               onChange={(e) => setOrderQuery(e.target.value)}
-              placeholder="Enter Order ID (e.g. MHR-2415, MHR-2417)"
+              placeholder="Enter Order ID (e.g. AKY-2415, AKY-2417)"
               className="w-full bg-ivory-100 border border-ivory-400 rounded pl-9 pr-3 py-2.5 text-xs sm:text-sm text-ink font-medium focus:outline-none focus:border-terracotta uppercase"
             />
           </div>

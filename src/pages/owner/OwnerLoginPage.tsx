@@ -49,12 +49,19 @@ export const OwnerLoginPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-ivory flex flex-col justify-center py-12 px-4 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md text-center">
-        <Link to="/" className="inline-block group mb-2">
-          <span className="font-serif text-4xl tracking-tight text-ink group-hover:text-terracotta transition-colors">
-            Akaay
-          </span>
-          <div className="w-full flex items-center justify-center gap-1 mt-0.5">
-            <span className="h-0.5 w-8 border-b border-dashed border-terracotta" />
+        <Link to="/" className="inline-flex items-center gap-3 group mb-2">
+          <div className="w-10 h-10 rounded-full bg-terracotta text-ivory flex items-center justify-center shadow-sm ring-2 ring-terracotta/20 group-hover:scale-105 transition-transform flex-shrink-0">
+            <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current" aria-hidden="true">
+              <path d="M12 3L5 20H8.2L9.8 15.8H14.2L15.8 20H19L12 3ZM12 8.5L13.3 12.8H10.7L12 8.5Z" />
+            </svg>
+          </div>
+          <div className="flex flex-col text-left">
+            <span className="font-serif text-3xl font-semibold tracking-tight text-ink group-hover:text-terracotta transition-colors leading-none">
+              Akaay
+            </span>
+            <span className="text-[10px] tracking-[0.2em] text-terracotta font-semibold uppercase">
+              Boutique
+            </span>
           </div>
         </Link>
         <h2 className="font-serif text-2xl text-ink font-normal mt-2">

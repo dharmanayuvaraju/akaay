@@ -6,7 +6,7 @@ import { useStore } from '../../context/StoreContext';
 export const OwnerBottomBar: React.FC = () => {
   const { products, orders } = useStore();
 
-  const firstProductId = products[0]?.id || 'mhr-01';
+  const firstProductId = products[0]?.id || 'aky-01';
 
   // Count active orders
   const activeOrdersCount = orders.filter(

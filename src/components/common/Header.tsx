@@ -33,18 +33,26 @@ export const Header: React.FC = () => {
 
           {/* Logo / Wordmark */}
           <div className="flex-1 md:flex-none text-center md:text-left">
-            <Link to="/" className="inline-block group py-1">
-              <span className="font-serif text-3xl sm:text-4xl tracking-tight text-ink group-hover:text-terracotta transition-colors">
-                Akaay
-              </span>
-              <div className="w-full flex items-center justify-center gap-1 mt-0.5">
-                <span className="h-0.5 w-3 bg-terracotta/40 rounded-full" />
-                <span className="h-0.5 w-8 border-b border-dashed border-terracotta" />
-                <span className="h-0.5 w-3 bg-terracotta/40 rounded-full" />
+            <Link to="/" className="inline-flex items-center gap-2.5 sm:gap-3 group py-1">
+              {/* Refined 'A' Monogram Seal */}
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-terracotta text-ivory flex items-center justify-center shadow-sm ring-2 ring-terracotta/20 group-hover:scale-105 transition-transform flex-shrink-0">
+                <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current" aria-hidden="true">
+                  <path d="M12 3L5 20H8.2L9.8 15.8H14.2L15.8 20H19L12 3ZM12 8.5L13.3 12.8H10.7L12 8.5Z" />
+                </svg>
               </div>
-              <span className="block text-[10px] tracking-[0.25em] text-ink-500 uppercase font-sans text-center mt-0.5">
-                Boutique • Hyderabad
-              </span>
+              <div className="flex flex-col text-left">
+                <div className="flex items-baseline gap-1.5">
+                  <span className="font-serif text-2xl sm:text-3xl font-semibold tracking-tight text-ink group-hover:text-terracotta transition-colors leading-none">
+                    Akaay
+                  </span>
+                  <span className="text-[10px] tracking-[0.25em] text-terracotta font-semibold uppercase">
+                    Boutique
+                  </span>
+                </div>
+                <span className="text-[9px] tracking-[0.2em] text-ink-500 uppercase font-sans mt-0.5">
+                  Hyderabad • Handcrafted
+                </span>
+              </div>
             </Link>
           </div>
 
@@ -53,8 +61,7 @@ export const Header: React.FC = () => {
             <NavLink
               to="/"
               className={({ isActive }) =>
-                `transition-colors hover:text-terracotta py-2 ${
-                  isActive ? 'text-terracotta font-semibold' : ''
+                `transition-colors hover:text-terracotta py-2 ${isActive ? 'text-terracotta font-semibold' : ''
                 }`
               }
             >
@@ -103,8 +110,7 @@ export const Header: React.FC = () => {
             <NavLink
               to="/new-arrivals"
               className={({ isActive }) =>
-                `transition-colors hover:text-terracotta py-2 ${
-                  isActive ? 'text-terracotta font-semibold' : ''
+                `transition-colors hover:text-terracotta py-2 ${isActive ? 'text-terracotta font-semibold' : ''
                 }`
               }
             >
@@ -114,8 +120,7 @@ export const Header: React.FC = () => {
             <NavLink
               to="/best-selling"
               className={({ isActive }) =>
-                `transition-colors hover:text-terracotta py-2 ${
-                  isActive ? 'text-terracotta font-semibold' : ''
+                `transition-colors hover:text-terracotta py-2 ${isActive ? 'text-terracotta font-semibold' : ''
                 }`
               }
             >
@@ -125,8 +130,7 @@ export const Header: React.FC = () => {
             <NavLink
               to="/offers"
               className={({ isActive }) =>
-                `transition-colors hover:text-terracotta py-2 ${
-                  isActive ? 'text-terracotta font-semibold' : ''
+                `transition-colors hover:text-terracotta py-2 ${isActive ? 'text-terracotta font-semibold' : ''
                 }`
               }
             >
@@ -141,8 +145,7 @@ export const Header: React.FC = () => {
             <NavLink
               to="/about"
               className={({ isActive }) =>
-                `transition-colors hover:text-terracotta py-2 ${
-                  isActive ? 'text-terracotta font-semibold' : ''
+                `transition-colors hover:text-terracotta py-2 ${isActive ? 'text-terracotta font-semibold' : ''
                 }`
               }
             >
@@ -152,8 +155,7 @@ export const Header: React.FC = () => {
             <NavLink
               to="/contact"
               className={({ isActive }) =>
-                `transition-colors hover:text-terracotta py-2 ${
-                  isActive ? 'text-terracotta font-semibold' : ''
+                `transition-colors hover:text-terracotta py-2 ${isActive ? 'text-terracotta font-semibold' : ''
                 }`
               }
             >
