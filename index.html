@@ -12,8 +12,8 @@
     href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap"
     rel="stylesheet" />
   <!-- Preload Video Intro Media for instant playback before React paints -->
-  <link rel="preload" as="image" href="/media/akaay-option-2-poster.jpg" fetchpriority="high" />
-  <link rel="preload" as="video" href="/media/akaay-option-2-intro.mp4" type="video/mp4" fetchpriority="high" />
+  <link rel="preload" as="image" href="%BASE_URL%media/akaay-option-2-poster.jpg" fetchpriority="high" />
+  <link rel="preload" as="video" href="%BASE_URL%media/akaay-option-2-intro.mp4" type="video/mp4" fetchpriority="high" />
   <!-- Preload Hero Slide Images for Sub-60fps Android & Desktop Loading -->
   <link rel="preload" as="image"
     href="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1600&h=900&q=80" />
@@ -130,13 +130,13 @@
         playsinline
         webkit-playsinline
         preload="auto"
-        poster="/media/akaay-option-2-poster.jpg"
+        poster="%BASE_URL%media/akaay-option-2-poster.jpg"
       >
-        <source src="/media/akaay-option-2-intro.mp4" type="video/mp4" />
+        <source src="%BASE_URL%media/akaay-option-2-intro.mp4" type="video/mp4" />
       </video>
       <img
         id="akaay-intro-poster"
-        src="/media/akaay-option-2-poster.jpg"
+        src="%BASE_URL%media/akaay-option-2-poster.jpg"
         alt="Akaay Boutique"
       />
     </div>
