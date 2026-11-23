@@ -66,9 +66,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           width="400"
           height="533"
           onLoad={() => setImageLoaded(true)}
-          className={`w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300 ${
-            imageLoaded ? 'opacity-100' : 'opacity-0'
-          }`}
+          className={`w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'
+            }`}
         />
 
         {/* Badges */}
@@ -79,12 +78,12 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             </span>
           )}
           {product.isBestSeller && !isOutOfStock && (
-            <span className="bg-terracotta text-white text-[9px] sm:text-[10px] font-medium px-2 py-0.5 rounded uppercase tracking-wider">
+            <span className="bg-terracotta text-white text-[10px] font-medium px-2 py-0.5 rounded uppercase tracking-wider">
               Bestseller
             </span>
           )}
           {product.isNew && !isOutOfStock && (
-            <span className="bg-ink-800 text-ivory text-[9px] sm:text-[10px] font-medium px-2 py-0.5 rounded uppercase tracking-wider">
+            <span className="bg-ink-800 text-ivory text-[10px] font-medium px-2 py-0.5 rounded uppercase tracking-wider">
               New
             </span>
           )}
@@ -104,11 +103,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           type="button"
           onClick={handleWishlistToggle}
           aria-label={isFavorited ? 'Remove from wishlist' : 'Add to wishlist'}
-          className={`touch-tap-target absolute top-2 right-2 z-20 w-8 h-8 rounded-full flex items-center justify-center transition-colors shadow-sm ${
-            isFavorited
-              ? 'bg-white text-terracotta'
-              : 'bg-white/80 text-ink-600 hover:text-terracotta hover:bg-white'
-          }`}
+          className={`touch-tap-target absolute top-2 right-2 z-20 w-8 h-8 rounded-full flex items-center justify-center transition-colors shadow-sm ${isFavorited
+            ? 'bg-white text-terracotta'
+            : 'bg-white/80 text-ink-600 hover:text-terracotta hover:bg-white'
+            }`}
         >
           <Heart className={`w-4 h-4 ${isFavorited ? 'fill-terracotta stroke-terracotta' : ''}`} />
         </button>
@@ -154,13 +152,12 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             type="button"
             onClick={handleQuickAdd}
             disabled={isOutOfStock}
-            className={`touch-tap-target w-8 h-8 rounded-full border transition-all text-xs font-medium flex items-center justify-center ${
-              isOutOfStock
-                ? 'border-ivory-400 text-ink-400 cursor-not-allowed bg-ivory-300'
-                : isAdding
+            className={`touch-tap-target w-8 h-8 rounded-full border transition-all text-xs font-medium flex items-center justify-center ${isOutOfStock
+              ? 'border-ivory-400 text-ink-400 cursor-not-allowed bg-ivory-300'
+              : isAdding
                 ? 'border-emerald-600 bg-emerald-600 text-white'
                 : 'border-terracotta text-terracotta hover:bg-terracotta hover:text-white active:scale-95'
-            }`}
+              }`}
             title={isOutOfStock ? 'Sold Out' : `Quick Add (${defaultSize})`}
             aria-label="Add to Cart"
           >

@@ -267,8 +267,9 @@ export const HomePage: React.FC = () => {
         onTouchEnd={handleTouchEnd}
         className="hero relative w-full flex items-center justify-center select-none overflow-hidden focus:outline-none"
         style={{
-          minHeight: 'calc(100vh - var(--header-h))',
-          paddingBlock: 'clamp(24px, 4vh, 60px)',
+          minHeight: 'clamp(520px, calc(100svh - 92px), 960px)',
+          paddingTop: 'clamp(14px, 2.5vh, 40px)',
+          paddingBottom: 'clamp(20px, 3.5vh, 48px)',
         }}
       >
         {/* Three.js dynamic canvas background with directional wipe & particles */}
@@ -309,7 +310,7 @@ export const HomePage: React.FC = () => {
                 aria-roledescription="slide"
                 aria-label={`${index + 1} of 3`}
                 className="hero-slide w-full relative grid grid-cols-1 min-[900px]:grid-cols-[55%_45%] items-center"
-                style={{ gap: 'clamp(24px, 4vw, 72px)' }}
+                style={{ gap: 'clamp(16px, 3vw, 72px)' }}
               >
                 {/* Giant background word AKAAY centered behind content */}
                 <div
@@ -333,7 +334,7 @@ export const HomePage: React.FC = () => {
                     style={{
                       color: slide.eyebrowColor,
                       fontSize: 'clamp(11px, 0.9vw, 15px)',
-                      marginBottom: 'clamp(8px, 1.2vh, 18px)',
+                      marginBottom: 'clamp(6px, 1vh, 14px)',
                     }}
                   >
                     {slide.eyebrow}
@@ -341,11 +342,10 @@ export const HomePage: React.FC = () => {
 
                   {/* Title */}
                   <h1
-                    className="font-serif tracking-tight"
+                    className="font-serif tracking-tight text-[30px] min-[360px]:text-[32px] sm:text-[34px] min-[900px]:text-[clamp(36px,4.4vw,76px)]"
                     style={{
-                      fontSize: 'clamp(36px, 4.4vw, 76px)',
                       lineHeight: 1.05,
-                      marginBottom: 'clamp(12px, 1.8vh, 24px)',
+                      marginBottom: 'clamp(8px, 1.2vh, 18px)',
                     }}
                   >
                     <span
@@ -364,31 +364,26 @@ export const HomePage: React.FC = () => {
 
                   {/* Subtext */}
                   <p
-                    className="hero-animate-subtext font-sans text-ink-700 leading-relaxed"
+                    className="hero-animate-subtext font-sans text-ink-700 leading-relaxed line-clamp-2 text-[13px] min-[360px]:text-[14px] sm:text-[15px] min-[900px]:text-[clamp(14px,1.1vw,20px)]"
                     style={{
                       color: slide.subtitleColor,
-                      fontSize: 'clamp(14px, 1.1vw, 20px)',
-                      maxWidth: 'clamp(380px, 34vw, 580px)',
-                      marginBottom: 'clamp(20px, 3vh, 40px)',
+                      maxWidth: 'clamp(320px, 34vw, 580px)',
+                      marginBottom: 'clamp(12px, 1.8vh, 24px)',
                     }}
                   >
                     {slide.subtitle}
                   </p>
 
-                  {/* Buttons */}
+                  {/* Buttons: side by side down to 360px (px-18px, font 13px, gap 10px); stack only below 340px */}
                   <div
-                    className="hero-animate-buttons flex flex-wrap items-center justify-center min-[900px]:justify-start"
-                    style={{ gap: 'clamp(12px, 1.5vw, 24px)' }}
+                    className="hero-animate-buttons flex flex-row max-[339px]:flex-col items-center justify-center min-[900px]:justify-start gap-2.5 min-[900px]:gap-[clamp(12px,1.5vw,24px)]"
                   >
                     <Link
                       to={slide.link}
-                      className="touch-tap-target rounded-full font-semibold tracking-wider uppercase transition-all duration-200 inline-flex items-center gap-2 shadow-md hover:-translate-y-0.5 hover:brightness-95 active:translate-y-0 focus-visible:ring-2 focus-visible:ring-offset-2"
+                      className="touch-tap-target rounded-full font-semibold tracking-wider uppercase transition-all duration-200 inline-flex items-center gap-1.5 shadow-md hover:-translate-y-0.5 hover:brightness-95 active:translate-y-0 focus-visible:ring-2 focus-visible:ring-offset-2 px-[18px] py-2.5 min-[900px]:px-[clamp(22px,2vw,36px)] min-[900px]:py-[clamp(12px,1.2vh,18px)] text-[13px] min-[900px]:text-[clamp(12px,0.85vw,15px)] shrink-0"
                       style={{
                         backgroundColor: slide.primaryBtnBg,
                         color: slide.primaryBtnText,
-                        fontSize: 'clamp(12px, 0.85vw, 15px)',
-                        paddingInline: 'clamp(22px, 2vw, 36px)',
-                        paddingBlock: 'clamp(12px, 1.2vh, 18px)',
                       }}
                     >
                       <span>SHOP NOW</span>
@@ -396,14 +391,11 @@ export const HomePage: React.FC = () => {
                     </Link>
                     <Link
                       to="/offers"
-                      className="touch-tap-target rounded-full font-semibold tracking-wider uppercase transition-all duration-200 inline-flex items-center hover:-translate-y-0.5 active:translate-y-0 focus-visible:ring-2 focus-visible:ring-offset-2 border-2"
+                      className="touch-tap-target rounded-full font-semibold tracking-wider uppercase transition-all duration-200 inline-flex items-center hover:-translate-y-0.5 active:translate-y-0 focus-visible:ring-2 focus-visible:ring-offset-2 border-2 px-[18px] py-2.5 min-[900px]:px-[clamp(22px,2vw,36px)] min-[900px]:py-[clamp(12px,1.2vh,18px)] text-[13px] min-[900px]:text-[clamp(12px,0.85vw,15px)] shrink-0"
                       style={{
                         borderColor: slide.secondaryBtnBorder,
                         color: slide.secondaryBtnText,
                         backgroundColor: 'transparent',
-                        fontSize: 'clamp(12px, 0.85vw, 15px)',
-                        paddingInline: 'clamp(22px, 2vw, 36px)',
-                        paddingBlock: 'clamp(12px, 1.2vh, 18px)',
                       }}
                       onMouseEnter={(e) => {
                         e.currentTarget.style.backgroundColor = slide.secondaryBtnBorder;
@@ -429,9 +421,8 @@ export const HomePage: React.FC = () => {
                       }}
                     >
                       <div
-                        className="aspect-[3/4] rounded-t-full rounded-b-none overflow-hidden relative shadow-2xl"
+                        className="aspect-[3/4] rounded-t-full rounded-b-none overflow-hidden relative shadow-2xl w-[clamp(180px,46vw,240px)] min-[900px]:w-[clamp(240px,24vw,440px)] min-h-[220px] max-h-[30svh] min-[900px]:max-h-none"
                         style={{
-                          width: 'clamp(240px, 24vw, 440px)',
                           border: `clamp(2px, 0.25vw, 4px) solid ${slide.archBorder}`,
                           boxShadow: '0 20px 40px rgba(0,0,0,0.18)',
                         }}
@@ -441,20 +432,16 @@ export const HomePage: React.FC = () => {
                           alt={`${slide.headlineLine1} ${slide.headlineLine2}`}
                           width="800"
                           height="1067"
-                          className="w-full h-full object-cover object-top"
+                          className="w-full h-full object-cover object-[50%_20%]"
                           loading={index === 0 ? 'eager' : 'lazy'}
                         />
                       </div>
                     </div>
                   </div>
 
-                  {/* Palette Dot Row */}
+                  {/* Palette Dot Row: min 44x44px tap targets */}
                   <div
-                    className="flex items-center justify-center z-20"
-                    style={{
-                      gap: 'clamp(10px, 1vw, 18px)',
-                      marginTop: 'clamp(14px, 2vh, 28px)',
-                    }}
+                    className="flex items-center justify-center z-20 mt-2 min-[900px]:mt-[clamp(14px,2vh,28px)]"
                     role="tablist"
                     aria-label="Slide indicators"
                   >
@@ -469,17 +456,21 @@ export const HomePage: React.FC = () => {
                           aria-selected={isDotActive}
                           aria-label={dot.ariaLabel}
                           onClick={() => handleDotClick(dot.targetSlide)}
-                          className={`rounded-full transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${dot.floatClass} ${
-                            isDotActive
-                              ? 'opacity-100 scale-125'
-                              : 'opacity-40 hover:opacity-80'
-                          } ${needsRing ? 'ring-1 ring-[#3B1F5E]' : ''}`}
-                          style={{
-                            width: 'clamp(9px, 0.75vw, 14px)',
-                            height: 'clamp(9px, 0.75vw, 14px)',
-                            backgroundColor: dot.color,
-                          }}
-                        />
+                          className="w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center p-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+                        >
+                          <span
+                            className={`rounded-full transition-all duration-200 block ${dot.floatClass} ${
+                              isDotActive
+                                ? 'opacity-100 scale-125'
+                                : 'opacity-40 hover:opacity-80'
+                            } ${needsRing ? 'ring-1 ring-[#3B1F5E]' : ''}`}
+                            style={{
+                              width: 'clamp(9px, 0.75vw, 14px)',
+                              height: 'clamp(9px, 0.75vw, 14px)',
+                              backgroundColor: dot.color,
+                            }}
+                          />
+                        </button>
                       );
                     })}
                   </div>
@@ -605,8 +596,8 @@ export const HomePage: React.FC = () => {
                     {cat.name}
                   </span>
                   <span
-                    className="text-ink-500 font-sans hidden sm:block"
-                    style={{ fontSize: 'clamp(10px, 0.75vw, 13px)' }}
+                    className="text-ink-500 font-sans hidden sm:block text-[11px]"
+                    style={{ fontSize: 'clamp(11px, 0.8vw, 13px)' }}
                   >
                     {cat.tag}
                   </span>
@@ -642,7 +633,7 @@ export const HomePage: React.FC = () => {
               </div>
               <Link
                 to="/offers"
-                className="font-medium text-terracotta hover:underline inline-flex items-center gap-1"
+                className="font-medium text-terracotta hover:underline inline-flex items-center gap-1 min-h-[44px] py-2 whitespace-nowrap shrink-0"
                 style={{ fontSize: 'clamp(12px, 0.85vw, 15px)' }}
               >
                 <span>Explore All Offers</span>
@@ -697,7 +688,7 @@ export const HomePage: React.FC = () => {
 
         {/* 4. BEST SELLING PRODUCT ROW (8 PRODUCTS in 4 columns) */}
         <section className="site-container px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between mb-6">
+          <div className="flex items-center justify-between mb-6 gap-2">
             <div>
               <span
                 className="uppercase tracking-widest text-terracotta font-semibold block"
@@ -714,7 +705,7 @@ export const HomePage: React.FC = () => {
             </div>
             <Link
               to="/best-selling"
-              className="font-medium text-terracotta hover:underline inline-flex items-center gap-1"
+              className="font-medium text-terracotta hover:underline inline-flex items-center gap-1 min-h-[44px] py-2 whitespace-nowrap shrink-0"
               style={{ fontSize: 'clamp(12px, 0.85vw, 15px)' }}
             >
               <span>View All</span>
@@ -823,7 +814,7 @@ export const HomePage: React.FC = () => {
 
         {/* 6. NEW ARRIVALS PRODUCT ROW (8 PRODUCTS in 4 columns) */}
         <section className="site-container px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between mb-6">
+          <div className="flex items-center justify-between mb-6 gap-2">
             <div>
               <span
                 className="uppercase tracking-widest text-marigold-600 font-bold block"
@@ -840,7 +831,7 @@ export const HomePage: React.FC = () => {
             </div>
             <Link
               to="/new-arrivals"
-              className="font-medium text-terracotta hover:underline inline-flex items-center gap-1"
+              className="font-medium text-terracotta hover:underline inline-flex items-center gap-1 min-h-[44px] py-2 whitespace-nowrap shrink-0"
               style={{ fontSize: 'clamp(12px, 0.85vw, 15px)' }}
             >
               <span>View All</span>

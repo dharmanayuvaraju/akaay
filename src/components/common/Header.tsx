@@ -16,49 +16,44 @@ export const Header: React.FC = () => {
   };
 
   return (
-    <header className="sticky top-0 z-40 bg-ivory/95 border-b border-ivory-400">
-      <div className="site-container px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between" style={{ height: 'var(--header-h)' }}>
+    <header className="sticky top-0 z-40 bg-[#FBF7F0] opacity-100 border-b border-ivory-400">
+      <div className="w-full px-3 md:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="flex items-center justify-between gap-1.5 min-[360px]:gap-2" style={{ height: 'var(--header-h)' }}>
           {/* Mobile menu trigger button */}
-          <div className="flex items-center md:hidden">
+          <div className="flex items-center md:hidden shrink-0">
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="touch-tap-target p-2 text-ink hover:text-terracotta focus:outline-none"
+              className="w-10 h-10 min-w-10 min-h-10 p-0 flex items-center justify-center text-ink hover:text-terracotta focus:outline-none"
               aria-label="Open Navigation Menu"
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
 
           {/* Logo / Wordmark */}
-          <div className="flex-1 md:flex-none text-center md:text-left">
-            <Link to="/" className="inline-flex items-center gap-2.5 sm:gap-3 group py-1">
+          <div className="min-w-0 flex-1 md:flex-none text-left">
+            <Link to="/" className="inline-flex items-center gap-2 group py-1 max-w-full">
               {/* Refined 'A' Monogram Seal: violet circle with white letter */}
               <div
-                className="rounded-full bg-[#3B1F5E] text-white flex items-center justify-center shadow-sm ring-2 ring-[#3B1F5E]/20 group-hover:scale-105 transition-transform flex-shrink-0"
-                style={{
-                  width: 'clamp(36px, 3vw, 52px)',
-                  height: 'clamp(36px, 3vw, 52px)',
-                }}
+                className="w-9 h-9 min-w-9 min-h-9 rounded-full bg-[#3B1F5E] text-white flex items-center justify-center shadow-sm ring-2 ring-[#3B1F5E]/20 group-hover:scale-105 transition-transform shrink-0"
               >
-                <svg viewBox="0 0 24 24" className="w-1/2 h-1/2 fill-current" aria-hidden="true">
+                <svg viewBox="0 0 24 24" className="w-4.5 h-4.5 fill-current" aria-hidden="true">
                   <path d="M12 3L5 20H8.2L9.8 15.8H14.2L15.8 20H19L12 3ZM12 8.5L13.3 12.8H10.7L12 8.5Z" />
                 </svg>
               </div>
-              <div className="flex flex-col text-left">
-                <div className="flex items-baseline gap-1.5">
+              <div className="flex flex-col text-left min-w-0">
+                <div className="flex items-baseline gap-1 min-[360px]:gap-1.5 whitespace-nowrap">
                   <span
-                    className="font-serif font-semibold tracking-tight text-ink group-hover:text-terracotta transition-colors leading-none"
-                    style={{ fontSize: 'clamp(20px, 1.6vw, 28px)' }}
+                    className="font-serif font-semibold tracking-tight text-ink group-hover:text-terracotta transition-colors leading-none text-[18px] min-[390px]:text-[20px] md:text-2xl"
                   >
                     Akaay
                   </span>
-                  <span className="text-[10px] tracking-[0.25em] text-terracotta font-semibold uppercase">
+                  <span className="text-[9px] min-[390px]:text-[10px] tracking-[0.18em] text-terracotta font-semibold uppercase leading-none">
                     Boutique
                   </span>
                 </div>
-                <span className="text-[9px] tracking-[0.2em] text-ink-500 uppercase font-sans mt-0.5">
+                <span className="text-[9px] tracking-[0.2em] text-ink-500 uppercase font-sans mt-0.5 hidden min-[480px]:block truncate">
                   Hyderabad • Handcrafted
                 </span>
               </div>
@@ -173,13 +168,12 @@ export const Header: React.FC = () => {
           </nav>
 
           {/* Action Icons */}
-          <div className="flex items-center gap-1 sm:gap-2 text-ink">
+          <div className="flex items-center gap-1 sm:gap-2 text-ink shrink-0">
             {/* Search */}
             <button
               type="button"
               onClick={handleSearchClick}
-              className="touch-tap-target p-2 hover:text-terracotta transition-colors flex items-center justify-center"
-              style={{ width: 'clamp(36px, 2.6vw, 48px)', height: 'clamp(36px, 2.6vw, 48px)' }}
+              className="w-10 h-10 min-w-10 min-h-10 p-0 hover:text-terracotta transition-colors flex items-center justify-center"
               aria-label="Search Collection"
             >
               <Search className="w-5 h-5" />
@@ -188,8 +182,7 @@ export const Header: React.FC = () => {
             {/* Wishlist */}
             <Link
               to="/wishlist"
-              className="touch-tap-target p-2 hover:text-terracotta transition-colors relative flex items-center justify-center"
-              style={{ width: 'clamp(36px, 2.6vw, 48px)', height: 'clamp(36px, 2.6vw, 48px)' }}
+              className="w-10 h-10 min-w-10 min-h-10 p-0 hover:text-terracotta transition-colors relative flex items-center justify-center"
               aria-label="Wishlist"
             >
               <Heart className="w-5 h-5" />
@@ -200,11 +193,10 @@ export const Header: React.FC = () => {
               )}
             </Link>
 
-            {/* Account */}
+            {/* Account - safely moved to hamburger menu below 400px so Cart is NEVER hidden */}
             <Link
               to="/account"
-              className="touch-tap-target p-2 hover:text-terracotta transition-colors relative flex items-center justify-center"
-              style={{ width: 'clamp(36px, 2.6vw, 48px)', height: 'clamp(36px, 2.6vw, 48px)' }}
+              className="hidden min-[400px]:flex w-10 h-10 min-w-10 min-h-10 p-0 hover:text-terracotta transition-colors relative items-center justify-center"
               aria-label="Account"
             >
               <User className="w-5 h-5" />
@@ -213,12 +205,11 @@ export const Header: React.FC = () => {
               )}
             </Link>
 
-            {/* Cart with count badge */}
+            {/* Cart with count badge - ALWAYS visible at every viewport width */}
             <button
               type="button"
               onClick={() => setIsCartOpen(true)}
-              className="touch-tap-target p-2 hover:text-terracotta transition-colors relative flex items-center justify-center"
-              style={{ width: 'clamp(36px, 2.6vw, 48px)', height: 'clamp(36px, 2.6vw, 48px)' }}
+              className="w-10 h-10 min-w-10 min-h-10 p-0 hover:text-terracotta transition-colors relative flex items-center justify-center"
               aria-label="Shopping Cart"
             >
               <ShoppingBag className="w-5 h-5" />
@@ -234,7 +225,7 @@ export const Header: React.FC = () => {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-ivory border-b border-ivory-400 px-4 pt-3 pb-6 space-y-3 animate-fadeIn">
+        <div className="md:hidden bg-[#FBF7F0] border-b border-ivory-400 px-4 pt-3 pb-6 space-y-3 animate-fadeIn">
           <div className="flex flex-col space-y-2 text-base font-medium">
             <Link
               to="/"
@@ -242,6 +233,14 @@ export const Header: React.FC = () => {
               className="px-3 py-2 rounded-md hover:bg-ivory-300 text-ink"
             >
               Home
+            </Link>
+            <Link
+              to="/account"
+              onClick={() => setMobileMenuOpen(false)}
+              className="px-3 py-2 rounded-md hover:bg-ivory-300 text-ink flex items-center justify-between"
+            >
+              <span>{customerUser ? `My Account (${customerUser.name || 'Member'})` : 'Account / Sign In'}</span>
+              <User className="w-4 h-4 text-ink-600" />
             </Link>
             <div className="border-l-2 border-terracotta/40 pl-3 my-1 space-y-1">
               <span className="text-xs uppercase tracking-wider text-ink-500 font-semibold block px-1 py-1">

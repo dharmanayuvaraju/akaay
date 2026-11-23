@@ -7,7 +7,7 @@ import { getBaseWhatsAppUrl } from '../../utils/whatsapp';
 export const Footer: React.FC = () => {
   return (
     <footer
-      className="bg-ink text-ivory border-t border-ink-700"
+      className="w-full max-w-none bg-ink text-ivory border-t border-ink-700 m-0"
       style={{ paddingBlock: 'clamp(48px, 6vw, 96px)' }}
     >
       <div className="site-container px-4 sm:px-6 lg:px-8">
@@ -31,14 +31,14 @@ export const Footer: React.FC = () => {
               Akaay Boutique curates heirloom handloom textiles, delicate artisanal embroideries, and
               mindful contemporary silhouettes for the modern Indian woman.
             </p>
-            <div className="pt-1 text-xs text-ivory-500 flex items-center gap-1.5">
+            <div className="pt-1 text-xs text-ivory-500 flex items-center gap-1.5 min-h-[44px]">
               <ShieldCheck className="w-4 h-4 text-marigold" />
               <span>100% Authentic Handcrafted Textiles</span>
             </div>
           </div>
 
           {/* Useful Links */}
-          <div className="space-y-3">
+          <div className="space-y-2">
             <h4
               className="font-serif text-ivory font-medium tracking-wide"
               style={{ fontSize: 'clamp(14px, 1vw, 18px)' }}
@@ -46,41 +46,41 @@ export const Footer: React.FC = () => {
               Useful Links
             </h4>
             <ul
-              className="space-y-2 text-ivory-400"
+              className="space-y-1 text-ivory-400"
               style={{ fontSize: 'clamp(12px, 0.85vw, 15px)' }}
             >
               <li>
-                <Link to="/" className="hover:text-marigold transition-colors">
+                <Link to="/" className="hover:text-marigold transition-colors min-h-[44px] flex items-center">
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="hover:text-marigold transition-colors">
+                <Link to="/about" className="hover:text-marigold transition-colors min-h-[44px] flex items-center">
                   About Our Studio
                 </Link>
               </li>
               <li>
-                <Link to="/track-order" className="hover:text-marigold transition-colors">
+                <Link to="/track-order" className="hover:text-marigold transition-colors min-h-[44px] flex items-center">
                   Track Your Order
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="hover:text-marigold transition-colors">
+                <Link to="/contact" className="hover:text-marigold transition-colors min-h-[44px] flex items-center">
                   Contact Us
                 </Link>
               </li>
               <li>
-                <Link to="/offers" className="hover:text-marigold transition-colors">
+                <Link to="/offers" className="hover:text-marigold transition-colors min-h-[44px] flex items-center">
                   Offers & Budget Finds
                 </Link>
               </li>
               <li>
-                <span className="text-ivory-500 hover:text-ivory-300 cursor-pointer">
+                <span className="text-ivory-500 hover:text-ivory-300 cursor-pointer min-h-[44px] flex items-center">
                   Shipping & Delivery Policy
                 </span>
               </li>
               <li>
-                <span className="text-ivory-500 hover:text-ivory-300 cursor-pointer">
+                <span className="text-ivory-500 hover:text-ivory-300 cursor-pointer min-h-[44px] flex items-center">
                   7-Day Returns & Exchanges
                 </span>
               </li>
@@ -88,7 +88,7 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Categories */}
-          <div className="space-y-3">
+          <div className="space-y-2">
             <h4
               className="font-serif text-ivory font-medium tracking-wide"
               style={{ fontSize: 'clamp(14px, 1vw, 18px)' }}
@@ -96,14 +96,14 @@ export const Footer: React.FC = () => {
               Collections
             </h4>
             <ul
-              className="space-y-2 text-ivory-400"
+              className="space-y-1 text-ivory-400"
               style={{ fontSize: 'clamp(12px, 0.85vw, 15px)' }}
             >
               {CATEGORIES.map((cat) => (
                 <li key={cat.slug}>
                   <Link
                     to={`/shop/${cat.slug}`}
-                    className="hover:text-marigold transition-colors"
+                    className="hover:text-marigold transition-colors min-h-[44px] flex items-center"
                   >
                     {cat.name}
                   </Link>
@@ -113,7 +113,7 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Contact Block */}
-          <div className="space-y-3">
+          <div className="space-y-2">
             <h4
               className="font-serif text-ivory font-medium tracking-wide"
               style={{ fontSize: 'clamp(14px, 1vw, 18px)' }}
@@ -121,35 +121,35 @@ export const Footer: React.FC = () => {
               Akaay Boutique
             </h4>
             <ul
-              className="space-y-2.5 text-ivory-400"
+              className="space-y-1 text-ivory-400"
               style={{ fontSize: 'clamp(12px, 0.85vw, 15px)' }}
             >
-              <li className="flex items-start gap-2.5">
+              <li className="flex items-start gap-2.5 min-h-[44px] py-1">
                 <MapPin className="w-4 h-4 text-terracotta shrink-0 mt-0.5" />
                 <span>Road No. 12, Banjara Hills, Hyderabad, Telangana 500034</span>
               </li>
-              <li className="flex items-center gap-2.5">
+              <li className="flex items-center gap-2.5 min-h-[44px]">
                 <Mail className="w-4 h-4 text-terracotta shrink-0" />
                 <a
                   href="mailto:hello@akaayboutique.in"
-                  className="hover:text-marigold transition-colors"
+                  className="hover:text-marigold transition-colors flex items-center min-h-[44px]"
                 >
                   hello@akaayboutique.in
                 </a>
               </li>
-              <li className="flex items-center gap-2.5">
+              <li className="flex items-center gap-2.5 min-h-[44px]">
                 <Phone className="w-4 h-4 text-terracotta shrink-0" />
-                <a href="tel:+917337422054" className="hover:text-marigold transition-colors">
+                <a href="tel:+917337422054" className="hover:text-marigold transition-colors flex items-center min-h-[44px]">
                   +91 73374 22054
                 </a>
               </li>
-              <li className="flex items-center gap-2.5">
+              <li className="flex items-center gap-2.5 min-h-[44px]">
                 <MessageCircle className="w-4 h-4 text-emerald-400 shrink-0" />
                 <a
                   href={getBaseWhatsAppUrl()}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-marigold transition-colors"
+                  className="hover:text-marigold transition-colors flex items-center min-h-[44px]"
                 >
                   WhatsApp: +91 73374 22054
                 </a>
