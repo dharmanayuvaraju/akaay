@@ -4,26 +4,325 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-  <meta name="theme-color" content="#FBF7F0" />
+  <meta name="theme-color" content="#46287C" />
   <title>Akaay Boutique | Handcrafted Indian Fashion</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap"
     rel="stylesheet" />
+  <!-- Preload Video Intro Media for instant playback before React paints -->
+  <link rel="preload" as="image" href="/media/akaay-option-2-poster.jpg" fetchpriority="high" />
+  <link rel="preload" as="video" href="/media/akaay-option-2-intro.mp4" type="video/mp4" fetchpriority="high" />
   <!-- Preload Hero Slide Images for Sub-60fps Android & Desktop Loading -->
   <link rel="preload" as="image"
-    href="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1600&h=900&q=80"
-    fetchpriority="high" />
+    href="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1600&h=900&q=80" />
   <link rel="preload" as="image"
     href="https://images.unsplash.com/photo-1774005906344-57048d3f5856?auto=format&fit=crop&w=1600&h=900&q=80" />
   <link rel="preload" as="image"
     href="https://images.unsplash.com/photo-1632826727346-43a7ac6bcb1b?auto=format&fit=crop&w=1600&h=900&q=80" />
   <link rel="icon" type="image/svg+xml"
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='14.5' fill='%23FBF7F0' stroke='%23C05621' stroke-width='2'/><path d='M16 6L8.5 24H12L13.8 19.5H18.2L20 24H23.5L16 6ZM16 11L17.3 16.8H14.7L16 11Z' fill='%23C05621'/></svg>" />
+
+  <!-- Video Intro Overlay Critical Styles & CSS-only Failsafe -->
+  <style>
+    #akaay-video-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      background-color: #46287C;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      cursor: pointer;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      opacity: 1;
+      transition: opacity 150ms cubic-bezier(0.4, 0, 0.2, 1);
+      /* CSS-only hide/pointer-events timeout at 2.8s: so overlay cannot trap page */
+      animation: akaayOverlayCssFailsafe 2.8s forwards;
+    }
+
+    @keyframes akaayOverlayCssFailsafe {
+      0%, 95% {
+        pointer-events: auto;
+      }
+      99% {
+        opacity: 0;
+        pointer-events: none;
+      }
+      100% {
+        opacity: 0 !important;
+        pointer-events: none !important;
+        visibility: hidden !important;
+        display: none !important;
+      }
+    }
+
+    .akaay-video-container {
+      position: relative;
+      width: min(100vw, 100vh);
+      height: min(100vw, 100vh);
+      width: min(100vw, 100svh);
+      height: min(100vw, 100svh);
+      aspect-ratio: 1 / 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 100vw;
+      max-height: 100svh;
+    }
+
+    #akaay-intro-video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      background-color: #46287C;
+    }
+
+    #akaay-intro-poster {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: none;
+      pointer-events: none;
+      background-color: #46287C;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #akaay-intro-video {
+        display: none !important;
+      }
+      #akaay-intro-poster {
+        display: block !important;
+      }
+      #akaay-video-overlay {
+        transition: none !important;
+      }
+    }
+  </style>
+
+  <!-- Noscript hiding so overlay cannot trap the page if JS is disabled -->
+  <noscript>
+    <style>
+      #akaay-video-overlay {
+        display: none !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+      }
+    </style>
+  </noscript>
 </head>
+
 <body class="bg-ivory text-ink font-sans antialiased min-h-screen selection:bg-terracotta/20 selection:text-terracotta">
+  <!-- 2.5-Second Video Launch Intro Overlay (Mounted before app paints) -->
+  <div id="akaay-video-overlay" role="dialog" aria-label="Akaay Boutique Introduction" aria-modal="true">
+    <div class="akaay-video-container">
+      <video
+        id="akaay-intro-video"
+        autoplay
+        muted
+        playsinline
+        webkit-playsinline
+        preload="auto"
+        poster="/media/akaay-option-2-poster.jpg"
+      >
+        <source src="/media/akaay-option-2-intro.mp4" type="video/mp4" />
+      </video>
+      <img
+        id="akaay-intro-poster"
+        src="/media/akaay-option-2-poster.jpg"
+        alt="Akaay Boutique"
+      />
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var overlay = document.getElementById('akaay-video-overlay');
+      if (!overlay) return;
+
+      var video = document.getElementById('akaay-intro-video');
+      var poster = document.getElementById('akaay-intro-poster');
+      var isExited = false;
+      var playbackStarted = false;
+
+      // Lock document scroll while intro is playing
+      var origDocOverflow = document.documentElement.style.overflow;
+      var origBodyOverflow = document.body.style.overflow;
+      document.documentElement.style.overflow = 'hidden';
+      document.body.style.overflow = 'hidden';
+
+      function restoreScroll() {
+        document.documentElement.style.overflow = origDocOverflow || '';
+        document.body.style.overflow = origBodyOverflow || '';
+      }
+
+      function showPosterFallback() {
+        if (poster && video) {
+          poster.style.display = 'block';
+          video.style.display = 'none';
+        }
+      }
+
+      function cleanup() {
+        window.removeEventListener('keydown', handleKeydown);
+        overlay.removeEventListener('click', handleClick);
+        overlay.removeEventListener('touchend', handleClick);
+        if (video) {
+          video.removeEventListener('playing', onPlaying);
+          video.removeEventListener('ended', onEnded);
+          video.removeEventListener('error', onError);
+        }
+        clearTimeout(fadeTimer);
+        clearTimeout(removeTimer);
+        clearTimeout(hardFailsafeTimer);
+        clearTimeout(stallTimer);
+        clearTimeout(reducedMotionTimer);
+        restoreScroll();
+      }
+
+      function exitOverlay(fadeDurationMs) {
+        if (isExited) return;
+        isExited = true;
+
+        cleanup();
+
+        if (fadeDurationMs > 0) {
+          overlay.style.transition = 'opacity ' + fadeDurationMs + 'ms cubic-bezier(0.4, 0, 0.2, 1)';
+          overlay.style.opacity = '0';
+          overlay.style.pointerEvents = 'none';
+          setTimeout(function () {
+            if (overlay.parentNode) {
+              overlay.parentNode.removeChild(overlay);
+            }
+          }, fadeDurationMs);
+        } else {
+          if (overlay.parentNode) {
+            overlay.parentNode.removeChild(overlay);
+          }
+        }
+      }
+
+      function handleClick(e) {
+        if (e && e.preventDefault) e.preventDefault();
+        exitOverlay(0); // Instant skip on click/tap
+      }
+
+      function handleKeydown(e) {
+        if (e.key === 'Escape' || e.keyCode === 27) {
+          if (e.preventDefault) e.preventDefault();
+          exitOverlay(0); // Instant skip on Escape
+        }
+      }
+
+      function onPlaying() {
+        playbackStarted = true;
+      }
+
+      function onEnded() {
+        // When video naturally ends, fade during 150ms and remove
+        exitOverlay(150);
+      }
+
+      function onError() {
+        showPosterFallback();
+      }
+
+      // Skip event listeners
+      overlay.addEventListener('click', handleClick);
+      overlay.addEventListener('touchend', handleClick, { passive: false });
+      window.addEventListener('keydown', handleKeydown);
+
+      // Resolve relative path if app is deployed on a sub-path like /akaay/
+      try {
+        var baseElem = document.querySelector('base');
+        var basePath = (baseElem && baseElem.getAttribute('href')) || window.location.pathname;
+        if (basePath && basePath.indexOf('/akaay') === 0) {
+          var prefix = '/akaay';
+          if (video && video.getAttribute('poster') === '/media/akaay-option-2-poster.jpg') {
+            video.setAttribute('poster', prefix + '/media/akaay-option-2-poster.jpg');
+          }
+          if (poster && poster.getAttribute('src') === '/media/akaay-option-2-poster.jpg') {
+            poster.setAttribute('src', prefix + '/media/akaay-option-2-poster.jpg');
+          }
+          var source = video ? video.querySelector('source') : null;
+          if (source && source.getAttribute('src') === '/media/akaay-option-2-intro.mp4') {
+            source.setAttribute('src', prefix + '/media/akaay-option-2-intro.mp4');
+            video.load();
+          }
+        }
+      } catch (pathErr) {}
+
+      // Reduced motion: static poster briefly (700ms), no video or fade
+      var prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var reducedMotionTimer = null;
+      if (prefersReduced) {
+        showPosterFallback();
+        reducedMotionTimer = setTimeout(function () {
+          exitOverlay(0);
+        }, 700);
+        return;
+      }
+
+      // Video setup & autoplay handling: set muted=true before play()
+      if (video) {
+        video.muted = true;
+        video.defaultMuted = true;
+        video.addEventListener('playing', onPlaying, { once: true });
+        video.addEventListener('ended', onEnded, { once: true });
+        video.addEventListener('error', onError, { once: true });
+
+        try {
+          var playPromise = video.play();
+          if (playPromise && typeof playPromise.catch === 'function') {
+            playPromise.catch(function () {
+              showPosterFallback();
+            });
+          }
+        } catch (err) {
+          showPosterFallback();
+        }
+      } else {
+        showPosterFallback();
+      }
+
+      // 400ms stall check: fallback to static poster if video has not started playing
+      var stallTimer = setTimeout(function () {
+        if (!playbackStarted && (!video || video.paused || video.currentTime === 0)) {
+          showPosterFallback();
+        }
+      }, 400);
+
+      // Start timing immediately when overlay appears:
+      // Fade overlay during the final 150ms (at 2350ms)
+      var fadeTimer = setTimeout(function () {
+        if (!isExited) {
+          overlay.style.transition = 'opacity 150ms cubic-bezier(0.4, 0, 0.2, 1)';
+          overlay.style.opacity = '0';
+          overlay.style.pointerEvents = 'none';
+        }
+      }, 2350);
+
+      // Remove overlay at 2500ms
+      var removeTimer = setTimeout(function () {
+        exitOverlay(0);
+      }, 2500);
+
+      // Independent hard failsafe removes overlay unconditionally by 2800ms
+      var hardFailsafeTimer = setTimeout(function () {
+        exitOverlay(0);
+      }, 2800);
+    })();
+  </script>
+
   <div id="root"></div>
   <script type="module" src="/src/main.tsx"></script>
 </body>
+
 </html>

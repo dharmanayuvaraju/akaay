@@ -70,92 +70,8 @@
 }
 
 /* ==========================================================================
-   Hero Section & Launch Intro Animations (Hardware-accelerated)
+   Hero Section Animations (Hardware-accelerated)
    ========================================================================== */
-
-/* --- Launch Intro (Part A) --- */
-.akaay-loader-overlay {
-  position: fixed !important;
-  inset: 0 !important;
-  z-index: 9999 !important;
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  justify-content: center !important;
-  background-color: #46287C !important;
-}
-
-@keyframes akaayLoaderCircleEnter {
-  0% {
-    opacity: 0;
-    transform: scale(0.6);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes akaayLoaderWordmarkEnter {
-  0% {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes akaayLoaderZoomThrough {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(14);
-  }
-}
-
-@keyframes akaayLoaderOverlayFadeOut {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-.akaay-loader-circle-in {
-  animation: akaayLoaderCircleEnter 500ms cubic-bezier(0.22, 1, 0.36, 1) 0ms both;
-  will-change: transform, opacity;
-}
-
-.akaay-loader-wordmark-in {
-  animation: akaayLoaderWordmarkEnter 400ms cubic-bezier(0.22, 1, 0.36, 1) 250ms both;
-  will-change: transform, opacity;
-}
-
-.akaay-loader-zoom-out {
-  animation: akaayLoaderZoomThrough 700ms cubic-bezier(0.7, 0, 0.3, 1) both;
-  transform-origin: center;
-  will-change: transform;
-}
-
-.akaay-loader-zoom-out-fast {
-  animation: akaayLoaderZoomThrough 250ms cubic-bezier(0.7, 0, 0.3, 1) both;
-  transform-origin: center;
-  will-change: transform;
-}
-
-.akaay-loader-fade-out {
-  animation: akaayLoaderOverlayFadeOut 700ms cubic-bezier(0.7, 0, 0.3, 1) both;
-  will-change: opacity;
-}
-
-.akaay-loader-fade-out-fast {
-  animation: akaayLoaderOverlayFadeOut 250ms cubic-bezier(0.7, 0, 0.3, 1) both;
-  will-change: opacity;
-}
 
 /* --- Hero Choreography (Part 2.6) --- */
 @keyframes heroRise {
@@ -304,12 +220,6 @@
 
 /* --- Reduced Motion Mode --- */
 @media (prefers-reduced-motion: reduce) {
-  .akaay-loader-circle-in,
-  .akaay-loader-wordmark-in,
-  .akaay-loader-zoom-out,
-  .akaay-loader-zoom-out-fast,
-  .akaay-loader-fade-out,
-  .akaay-loader-fade-out-fast,
   .hero-animate-eyebrow,
   .hero-animate-title1,
   .hero-animate-title2,

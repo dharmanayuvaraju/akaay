@@ -4,7 +4,6 @@ import { ChevronLeft, ChevronRight, Star, ArrowRight, Shield, Clock, HeartHandsh
 import { CATEGORIES, REVIEWS } from '../../data/products';
 import { ProductCard } from '../../components/common/ProductCard';
 import { useStore } from '../../context/StoreContext';
-import { SiteLoader } from '../../components/common/SiteLoader';
 import { ThreeHeroCanvas, checkThreeCapability } from '../../components/customer/ThreeHeroCanvas';
 
 const HERO_SLIDES = [
@@ -98,23 +97,6 @@ export const HomePage: React.FC = () => {
   const { products } = useStore();
   const navigate = useNavigate();
 
-  // Part A: Launch Intro state (versioned to akaayIntroSeenV2, ?intro=1 override)
-  const [showLoader, setShowLoader] = useState(() => {
-    try {
-      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (prefersReduced) return false;
-      const urlParams = new URLSearchParams(window.location.search);
-      if (urlParams.get('intro') === '1') {
-        return true;
-      }
-      const alreadySeen = sessionStorage.getItem('akaayIntroSeenV2');
-      return !alreadySeen;
-    } catch {
-      return false;
-    }
-  });
-  const [heroEntranceReady, setHeroEntranceReady] = useState(() => !showLoader);
-
   // Part 2: Carousel state & Three.js guardrails
   const [currentSlide, setCurrentSlide] = useState(0);
   const [slideDirection, setSlideDirection] = useState<'next' | 'prev'>('next');
@@ -198,7 +180,7 @@ export const HomePage: React.FC = () => {
 
   // Autoplay advances every 5.5s (2.9)
   useEffect(() => {
-    if (isPaused || showLoader) return;
+    if (isPaused) return;
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
     if (mediaQuery.matches) return;
 
@@ -209,7 +191,7 @@ export const HomePage: React.FC = () => {
     return () => {
       if (autoplayTimerRef.current) clearInterval(autoplayTimerRef.current);
     };
-  }, [isPaused, showLoader, handleNextSlide]);
+  }, [isPaused, handleNextSlide]);
 
   // Cleanup all timers on unmount (2.10)
   useEffect(() => {
@@ -263,14 +245,6 @@ export const HomePage: React.FC = () => {
 
   return (
     <div className="pb-12">
-      {/* PART 1: LAUNCH INTRO OVERLAY */}
-      {showLoader && (
-        <SiteLoader
-          onHeroStart={() => setHeroEntranceReady(true)}
-          onComplete={() => setShowLoader(false)}
-        />
-      )}
-
       {/* Screen-reader live announcement of slide change */}
       <div className="sr-only" aria-live="polite" aria-atomic="true">
         {`Showing slide ${currentSlide + 1} of 3: ${currentSlideData.headlineLine1} ${currentSlideData.headlineLine2}`}
@@ -330,7 +304,7 @@ export const HomePage: React.FC = () => {
 
             return (
               <article
-                key={`slide-${slide.id}-${heroEntranceReady}`}
+                key={`slide-${slide.id}`}
                 role="group"
                 aria-roledescription="slide"
                 aria-label={`${index + 1} of 3`}
