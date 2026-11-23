@@ -50,8 +50,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
   return (
     <div className="group relative flex flex-col bg-ivory rounded-md overflow-hidden border border-ivory-400/60 hover:border-terracotta/40 transition-all duration-200">
-      {/* Image container 4:5 ratio */}
-      <Link to={`/product/${product.id}`} className="relative block aspect-[4/5] overflow-hidden bg-ivory-300">
+      {/* Image container: aspect-ratio 3/4 with object-fit cover */}
+      <Link to={`/product/${product.id}`} className="relative block aspect-[3/4] overflow-hidden bg-ivory-300">
         {/* Skeleton while loading */}
         {!imageLoaded && (
           <div className="absolute inset-0 bg-ivory-300 animate-pulse flex items-center justify-center">
@@ -64,7 +64,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           alt={product.name}
           loading="lazy"
           width="400"
-          height="500"
+          height="533"
           onLoad={() => setImageLoaded(true)}
           className={`w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300 ${
             imageLoaded ? 'opacity-100' : 'opacity-0'
@@ -74,17 +74,17 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         {/* Badges */}
         <div className="absolute top-2 left-2 flex flex-col gap-1 z-10">
           {discountPercent > 0 && !isOutOfStock && (
-            <span className="bg-marigold text-ink-900 font-bold text-[11px] px-2 py-0.5 rounded shadow-sm">
+            <span className="bg-marigold text-ink-900 text-[10px] sm:text-xs font-bold px-2 py-0.5 rounded shadow-sm">
               {discountPercent}% OFF
             </span>
           )}
           {product.isBestSeller && !isOutOfStock && (
-            <span className="bg-terracotta text-white font-medium text-[10px] px-2 py-0.5 rounded uppercase tracking-wider">
+            <span className="bg-terracotta text-white text-[9px] sm:text-[10px] font-medium px-2 py-0.5 rounded uppercase tracking-wider">
               Bestseller
             </span>
           )}
           {product.isNew && !isOutOfStock && (
-            <span className="bg-ink-800 text-ivory font-medium text-[10px] px-2 py-0.5 rounded uppercase tracking-wider">
+            <span className="bg-ink-800 text-ivory text-[9px] sm:text-[10px] font-medium px-2 py-0.5 rounded uppercase tracking-wider">
               New
             </span>
           )}
@@ -122,7 +122,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           </span>
           <Link
             to={`/product/${product.id}`}
-            className="block font-serif text-sm sm:text-base text-ink font-medium leading-snug line-clamp-1 group-hover:text-terracotta transition-colors"
+            className="block font-serif text-ink font-medium leading-snug line-clamp-1 group-hover:text-terracotta transition-colors"
+            style={{ fontSize: 'clamp(13px, 1vw, 17px)' }}
           >
             {product.name}
           </Link>
@@ -131,7 +132,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         <div className="mt-2.5 pt-2 border-t border-ivory-300 flex items-center justify-between">
           <div>
             <div className="flex items-baseline gap-1.5">
-              <span className="text-sm sm:text-base font-bold text-ink">
+              <span
+                className="font-bold text-ink"
+                style={{ fontSize: 'clamp(14px, 1.1vw, 19px)' }}
+              >
                 ₹{product.price.toLocaleString('en-IN')}
               </span>
               {product.mrp > product.price && (
@@ -150,7 +154,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             type="button"
             onClick={handleQuickAdd}
             disabled={isOutOfStock}
-            className={`touch-tap-target p-2 rounded-full border transition-all text-xs font-medium flex items-center justify-center ${
+            className={`touch-tap-target w-8 h-8 rounded-full border transition-all text-xs font-medium flex items-center justify-center ${
               isOutOfStock
                 ? 'border-ivory-400 text-ink-400 cursor-not-allowed bg-ivory-300'
                 : isAdding

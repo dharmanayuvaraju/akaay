@@ -17,8 +17,8 @@ export const Header: React.FC = () => {
 
   return (
     <header className="sticky top-0 z-40 bg-ivory/95 border-b border-ivory-400">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-18 sm:h-20">
+      <div className="site-container px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between" style={{ height: 'var(--header-h)' }}>
           {/* Mobile menu trigger button */}
           <div className="flex items-center md:hidden">
             <button
@@ -34,15 +34,24 @@ export const Header: React.FC = () => {
           {/* Logo / Wordmark */}
           <div className="flex-1 md:flex-none text-center md:text-left">
             <Link to="/" className="inline-flex items-center gap-2.5 sm:gap-3 group py-1">
-              {/* Refined 'A' Monogram Seal */}
-              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-terracotta text-ivory flex items-center justify-center shadow-sm ring-2 ring-terracotta/20 group-hover:scale-105 transition-transform flex-shrink-0">
-                <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current" aria-hidden="true">
+              {/* Refined 'A' Monogram Seal: violet circle with white letter */}
+              <div
+                className="rounded-full bg-[#3B1F5E] text-white flex items-center justify-center shadow-sm ring-2 ring-[#3B1F5E]/20 group-hover:scale-105 transition-transform flex-shrink-0"
+                style={{
+                  width: 'clamp(36px, 3vw, 52px)',
+                  height: 'clamp(36px, 3vw, 52px)',
+                }}
+              >
+                <svg viewBox="0 0 24 24" className="w-1/2 h-1/2 fill-current" aria-hidden="true">
                   <path d="M12 3L5 20H8.2L9.8 15.8H14.2L15.8 20H19L12 3ZM12 8.5L13.3 12.8H10.7L12 8.5Z" />
                 </svg>
               </div>
               <div className="flex flex-col text-left">
                 <div className="flex items-baseline gap-1.5">
-                  <span className="font-serif text-2xl sm:text-3xl font-semibold tracking-tight text-ink group-hover:text-terracotta transition-colors leading-none">
+                  <span
+                    className="font-serif font-semibold tracking-tight text-ink group-hover:text-terracotta transition-colors leading-none"
+                    style={{ fontSize: 'clamp(20px, 1.6vw, 28px)' }}
+                  >
                     Akaay
                   </span>
                   <span className="text-[10px] tracking-[0.25em] text-terracotta font-semibold uppercase">
@@ -57,12 +66,17 @@ export const Header: React.FC = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-7 text-sm font-medium text-ink">
+          <nav
+            className="hidden md:flex items-center font-medium text-ink"
+            style={{
+              gap: 'clamp(16px, 2vw, 40px)',
+              fontSize: 'clamp(13px, 0.9vw, 16px)',
+            }}
+          >
             <NavLink
               to="/"
               className={({ isActive }) =>
-                `transition-colors hover:text-terracotta py-2 ${isActive ? 'text-terracotta font-semibold' : ''
-                }`
+                `transition-colors hover:text-terracotta py-2 ${isActive ? 'text-terracotta font-semibold' : ''}`
               }
             >
               Home
@@ -110,8 +124,7 @@ export const Header: React.FC = () => {
             <NavLink
               to="/new-arrivals"
               className={({ isActive }) =>
-                `transition-colors hover:text-terracotta py-2 ${isActive ? 'text-terracotta font-semibold' : ''
-                }`
+                `transition-colors hover:text-terracotta py-2 ${isActive ? 'text-terracotta font-semibold' : ''}`
               }
             >
               New Arrivals
@@ -120,8 +133,7 @@ export const Header: React.FC = () => {
             <NavLink
               to="/best-selling"
               className={({ isActive }) =>
-                `transition-colors hover:text-terracotta py-2 ${isActive ? 'text-terracotta font-semibold' : ''
-                }`
+                `transition-colors hover:text-terracotta py-2 ${isActive ? 'text-terracotta font-semibold' : ''}`
               }
             >
               Best Selling
@@ -130,8 +142,7 @@ export const Header: React.FC = () => {
             <NavLink
               to="/offers"
               className={({ isActive }) =>
-                `transition-colors hover:text-terracotta py-2 ${isActive ? 'text-terracotta font-semibold' : ''
-                }`
+                `transition-colors hover:text-terracotta py-2 ${isActive ? 'text-terracotta font-semibold' : ''}`
               }
             >
               <span className="relative">
@@ -145,8 +156,7 @@ export const Header: React.FC = () => {
             <NavLink
               to="/about"
               className={({ isActive }) =>
-                `transition-colors hover:text-terracotta py-2 ${isActive ? 'text-terracotta font-semibold' : ''
-                }`
+                `transition-colors hover:text-terracotta py-2 ${isActive ? 'text-terracotta font-semibold' : ''}`
               }
             >
               About
@@ -155,8 +165,7 @@ export const Header: React.FC = () => {
             <NavLink
               to="/contact"
               className={({ isActive }) =>
-                `transition-colors hover:text-terracotta py-2 ${isActive ? 'text-terracotta font-semibold' : ''
-                }`
+                `transition-colors hover:text-terracotta py-2 ${isActive ? 'text-terracotta font-semibold' : ''}`
               }
             >
               Contact
@@ -164,12 +173,13 @@ export const Header: React.FC = () => {
           </nav>
 
           {/* Action Icons */}
-          <div className="flex items-center space-x-1 sm:space-x-3 text-ink">
+          <div className="flex items-center gap-1 sm:gap-2 text-ink">
             {/* Search */}
             <button
               type="button"
               onClick={handleSearchClick}
-              className="touch-tap-target p-2 hover:text-terracotta transition-colors"
+              className="touch-tap-target p-2 hover:text-terracotta transition-colors flex items-center justify-center"
+              style={{ width: 'clamp(36px, 2.6vw, 48px)', height: 'clamp(36px, 2.6vw, 48px)' }}
               aria-label="Search Collection"
             >
               <Search className="w-5 h-5" />
@@ -178,7 +188,8 @@ export const Header: React.FC = () => {
             {/* Wishlist */}
             <Link
               to="/wishlist"
-              className="touch-tap-target p-2 hover:text-terracotta transition-colors relative"
+              className="touch-tap-target p-2 hover:text-terracotta transition-colors relative flex items-center justify-center"
+              style={{ width: 'clamp(36px, 2.6vw, 48px)', height: 'clamp(36px, 2.6vw, 48px)' }}
               aria-label="Wishlist"
             >
               <Heart className="w-5 h-5" />
@@ -192,7 +203,8 @@ export const Header: React.FC = () => {
             {/* Account */}
             <Link
               to="/account"
-              className="touch-tap-target p-2 hover:text-terracotta transition-colors relative"
+              className="touch-tap-target p-2 hover:text-terracotta transition-colors relative flex items-center justify-center"
+              style={{ width: 'clamp(36px, 2.6vw, 48px)', height: 'clamp(36px, 2.6vw, 48px)' }}
               aria-label="Account"
             >
               <User className="w-5 h-5" />
@@ -205,7 +217,8 @@ export const Header: React.FC = () => {
             <button
               type="button"
               onClick={() => setIsCartOpen(true)}
-              className="touch-tap-target p-2 hover:text-terracotta transition-colors relative"
+              className="touch-tap-target p-2 hover:text-terracotta transition-colors relative flex items-center justify-center"
+              style={{ width: 'clamp(36px, 2.6vw, 48px)', height: 'clamp(36px, 2.6vw, 48px)' }}
               aria-label="Shopping Cart"
             >
               <ShoppingBag className="w-5 h-5" />

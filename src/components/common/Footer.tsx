@@ -6,9 +6,12 @@ import { getBaseWhatsAppUrl } from '../../utils/whatsapp';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-ink text-ivory pt-14 pb-20 md:pb-12 border-t border-ink-700">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+    <footer
+      className="bg-ink text-ivory border-t border-ink-700"
+      style={{ paddingBlock: 'clamp(48px, 6vw, 96px)' }}
+    >
+      <div className="site-container px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
           {/* Brand Blurb */}
           <div className="space-y-4 md:col-span-1">
             <Link to="/" className="inline-flex items-center gap-3 group">
@@ -36,10 +39,16 @@ export const Footer: React.FC = () => {
 
           {/* Useful Links */}
           <div className="space-y-3">
-            <h4 className="font-serif text-base text-ivory font-medium tracking-wide">
+            <h4
+              className="font-serif text-ivory font-medium tracking-wide"
+              style={{ fontSize: 'clamp(14px, 1vw, 18px)' }}
+            >
               Useful Links
             </h4>
-            <ul className="space-y-2 text-sm text-ivory-400">
+            <ul
+              className="space-y-2 text-ivory-400"
+              style={{ fontSize: 'clamp(12px, 0.85vw, 15px)' }}
+            >
               <li>
                 <Link to="/" className="hover:text-marigold transition-colors">
                   Home
@@ -80,10 +89,16 @@ export const Footer: React.FC = () => {
 
           {/* Categories */}
           <div className="space-y-3">
-            <h4 className="font-serif text-base text-ivory font-medium tracking-wide">
+            <h4
+              className="font-serif text-ivory font-medium tracking-wide"
+              style={{ fontSize: 'clamp(14px, 1vw, 18px)' }}
+            >
               Collections
             </h4>
-            <ul className="space-y-2 text-sm text-ivory-400">
+            <ul
+              className="space-y-2 text-ivory-400"
+              style={{ fontSize: 'clamp(12px, 0.85vw, 15px)' }}
+            >
               {CATEGORIES.map((cat) => (
                 <li key={cat.slug}>
                   <Link
@@ -99,10 +114,16 @@ export const Footer: React.FC = () => {
 
           {/* Contact Block */}
           <div className="space-y-3">
-            <h4 className="font-serif text-base text-ivory font-medium tracking-wide">
+            <h4
+              className="font-serif text-ivory font-medium tracking-wide"
+              style={{ fontSize: 'clamp(14px, 1vw, 18px)' }}
+            >
               Akaay Boutique
             </h4>
-            <ul className="space-y-2.5 text-sm text-ivory-400">
+            <ul
+              className="space-y-2.5 text-ivory-400"
+              style={{ fontSize: 'clamp(12px, 0.85vw, 15px)' }}
+            >
               <li className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-terracotta shrink-0 mt-0.5" />
                 <span>Road No. 12, Banjara Hills, Hyderabad, Telangana 500034</span>

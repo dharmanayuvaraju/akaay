@@ -7,8 +7,14 @@ export const AnnouncementBar: React.FC = () => {
   const { settings } = useStore();
 
   return (
-    <div className="bg-ink text-ivory text-xs sm:text-sm font-medium py-2 px-4 transition-colors">
-      <div className="max-w-7xl mx-auto flex items-center justify-center gap-2 text-center">
+    <div
+      className="bg-ink text-ivory px-4 font-medium transition-colors flex items-center justify-center"
+      style={{ minHeight: 'clamp(32px, 4vh, 44px)' }}
+    >
+      <div
+        className="site-container flex items-center justify-center gap-2 text-center"
+        style={{ fontSize: 'clamp(11px, 0.8vw, 14px)' }}
+      >
         <span className="hidden sm:inline-block w-1.5 h-1.5 rounded-full bg-marigold animate-pulse" />
         <a
           href={getBaseWhatsAppUrl()}

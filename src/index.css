@@ -1,3 +1,10 @@
+:root {
+  --gutter: clamp(20px, 4vw, 80px);
+  --container: min(1760px, calc(100% - (2 * var(--gutter))));
+  --section-y: clamp(48px, 7vw, 120px);
+  --header-h: clamp(64px, 7vh, 88px);
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -21,6 +28,11 @@
 }
 
 @layer utilities {
+  .site-container {
+    width: var(--container);
+    margin-inline: auto;
+  }
+
   .touch-tap-target {
     min-height: 44px;
     min-width: 44px;
@@ -54,5 +66,270 @@
   .no-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
+  }
+}
+
+/* ==========================================================================
+   Hero Section & Launch Intro Animations (Hardware-accelerated)
+   ========================================================================== */
+
+/* --- Launch Intro (Part A) --- */
+.akaay-loader-overlay {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 9999 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background-color: #46287C !important;
+}
+
+@keyframes akaayLoaderCircleEnter {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes akaayLoaderWordmarkEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes akaayLoaderZoomThrough {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(14);
+  }
+}
+
+@keyframes akaayLoaderOverlayFadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.akaay-loader-circle-in {
+  animation: akaayLoaderCircleEnter 500ms cubic-bezier(0.22, 1, 0.36, 1) 0ms both;
+  will-change: transform, opacity;
+}
+
+.akaay-loader-wordmark-in {
+  animation: akaayLoaderWordmarkEnter 400ms cubic-bezier(0.22, 1, 0.36, 1) 250ms both;
+  will-change: transform, opacity;
+}
+
+.akaay-loader-zoom-out {
+  animation: akaayLoaderZoomThrough 700ms cubic-bezier(0.7, 0, 0.3, 1) both;
+  transform-origin: center;
+  will-change: transform;
+}
+
+.akaay-loader-zoom-out-fast {
+  animation: akaayLoaderZoomThrough 250ms cubic-bezier(0.7, 0, 0.3, 1) both;
+  transform-origin: center;
+  will-change: transform;
+}
+
+.akaay-loader-fade-out {
+  animation: akaayLoaderOverlayFadeOut 700ms cubic-bezier(0.7, 0, 0.3, 1) both;
+  will-change: opacity;
+}
+
+.akaay-loader-fade-out-fast {
+  animation: akaayLoaderOverlayFadeOut 250ms cubic-bezier(0.7, 0, 0.3, 1) both;
+  will-change: opacity;
+}
+
+/* --- Hero Choreography (Part 2.6) --- */
+@keyframes heroRise {
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideFadeOutUp {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+}
+
+@keyframes archReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(36px) scale(0.94);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes archFloat {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes dotFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes heroWordDrift {
+  0% {
+    opacity: 0;
+    transform: translateX(4%);
+  }
+  100% {
+    opacity: 0.07;
+    transform: translateX(0);
+  }
+}
+
+/* Staggered delays: 0ms, 70ms, 140ms, 210ms, 280ms */
+.hero-animate-eyebrow {
+  animation: heroRise 450ms cubic-bezier(0.22, 1, 0.36, 1) 0ms both;
+  will-change: transform, opacity;
+}
+
+.hero-animate-title1 {
+  animation: heroRise 450ms cubic-bezier(0.22, 1, 0.36, 1) 70ms both;
+  will-change: transform, opacity;
+}
+
+.hero-animate-title2 {
+  animation: heroRise 450ms cubic-bezier(0.22, 1, 0.36, 1) 140ms both;
+  will-change: transform, opacity;
+}
+
+.hero-animate-subtext {
+  animation: heroRise 450ms cubic-bezier(0.22, 1, 0.36, 1) 210ms both;
+  will-change: transform, opacity;
+}
+
+.hero-animate-buttons {
+  animation: heroRise 450ms cubic-bezier(0.22, 1, 0.36, 1) 280ms both;
+  will-change: transform, opacity;
+}
+
+.hero-animate-arch {
+  animation: archReveal 550ms cubic-bezier(0.22, 1, 0.36, 1) 300ms both;
+  will-change: transform, opacity;
+}
+
+.hero-animate-word {
+  animation: heroWordDrift 600ms ease-out 0ms both;
+  will-change: transform, opacity;
+}
+
+.hero-exit-slide {
+  animation: slideFadeOutUp 200ms ease-in both;
+  will-change: transform, opacity;
+}
+
+.hero-float-arch {
+  animation: archFloat 5s ease-in-out infinite alternate;
+}
+
+.hero-float-dot-0 {
+  animation: dotFloat 3s ease-in-out 0ms infinite;
+}
+
+.hero-float-dot-1 {
+  animation: dotFloat 3s ease-in-out 150ms infinite;
+}
+
+.hero-float-dot-2 {
+  animation: dotFloat 3s ease-in-out 300ms infinite;
+}
+
+.hero-float-dot-3 {
+  animation: dotFloat 3s ease-in-out 450ms infinite;
+}
+
+/* --- Marquee Strip (Part 2.12) --- */
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 22s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* --- Reduced Motion Mode --- */
+@media (prefers-reduced-motion: reduce) {
+  .akaay-loader-circle-in,
+  .akaay-loader-wordmark-in,
+  .akaay-loader-zoom-out,
+  .akaay-loader-zoom-out-fast,
+  .akaay-loader-fade-out,
+  .akaay-loader-fade-out-fast,
+  .hero-animate-eyebrow,
+  .hero-animate-title1,
+  .hero-animate-title2,
+  .hero-animate-subtext,
+  .hero-animate-buttons,
+  .hero-animate-arch,
+  .hero-animate-word,
+  .hero-exit-slide,
+  .hero-float-arch,
+  .hero-float-dot-0,
+  .hero-float-dot-1,
+  .hero-float-dot-2,
+  .hero-float-dot-3,
+  .animate-marquee {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .hero-animate-word {
+    opacity: 0.07 !important;
   }
 }
